@@ -1189,7 +1189,11 @@ footer { background: var(--ink-2); color: var(--ink-faint); border-top: 1px soli
         <div class="pm-k">Partner of record</div>
         <div class="pm-v">SAPTECHS Private Limited</div>
         <dl>
-          <dt>Partner ID</dt><dd><span class="fillme">SAP partner id</span></dd>
+          <!-- UIT-WHY 2026-10-06: the live site showed a "SAP partner id" placeholder box.
+               Cause:  the page shipped before the partner ID was supplied.
+               Change: the real SAP Partner ID, 3236998, as given by Jagadeesh.
+               Revert risk: the placeholder reappears on the public "Partner of record" card. -->
+          <dt>Partner ID</dt><dd>3236998</dd>
           <dt>Programme</dt><dd><span class="fillme">partner programme &amp; level</span></dd>
           <dt>Since</dt><dd><span class="fillme">year</span></dd>
           <dt>Focus</dt><dd>SAP BTP · S/4HANA extensibility · Fiori · HANA</dd>
