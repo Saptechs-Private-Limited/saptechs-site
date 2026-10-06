@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saptechs.co.in/sitemap.xml

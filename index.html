@@ -1,0 +1,1996 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAPTECHS — SAP technical solutions on ABAP, Fiori, BTP, CAPM, RAP, CDS, HANA and AMDP</title>
+<meta name="description" content="SAPTECHS is an SAP partner delivering SAP technical solutions — ABAP, RAP, CDS, AMDP, SAP HANA, Fiori/UI5, CAPM and SAP BTP — and building its own products: UniverseIT, ProficIT, DynAppro, BuilDyn and KirikIT.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0A1A2F">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNBUFRFQ0hTIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPCEtLSBCcmFuZCBwYWNrIHYzLCBTQVBURUNIU19GYXZpY29uX0JsdWVGaWVsZF81MTJ4NTEyLnN2ZywgQzJQQSBtZXRhZGF0YQogICAgICAgc3RyaXBwZWQuIFRoZSAzeDMgZ3JpZCBtYXJrIG9uIGEgIzBDNDQ3QyByb3VuZGVkIHNxdWFyZSwgY29ybmVyIGNlbGxzCiAgICAgICBsaWZ0ZWQgdG8gIzVDODZBRSBzbyB0aGUgb3JhbmdlIFQgcmVhZHMgZmlyc3QgYXQgdGFiIHNpemUuIElubGluZWQgaW50bwogICAgICAgZGlzdC9pbmRleC5odG1sIGFzIGEgZGF0YTogVVJJIGJ5IGJ1aWxkLXN0YW5kYWxvbmUucHkuIC0tPgo8dGl0bGU+U0FQVEVDSFNfRmF2aWNvbl9CbHVlRmllbGRfNTEyeDUxMjwvdGl0bGU+CjxwYXRoIGQ9Ik0xMDIuNCAwTDQwOS42IDBDNDY2LjE1IDAgNTEyIDQ1Ljg1IDUxMiAxMDIuNEw1MTIgNDA5LjZDNTEyIDQ2Ni4xNSA0NjYuMTUgNTEyIDQwOS42IDUxMkwxMDIuNCA1MTJDNDUuODUgNTEyIDAgNDY2LjE1IDAgNDA5LjZMMCAxMDIuNEMwIDQ1Ljg1IDQ1Ljg1IDAgMTAyLjQgMFoiIGZpbGw9IiMwQzQ0N0MiPjwvcGF0aD4KPHBhdGggZD0iTTkxLjE3IDY3TDE1Mi43MSA2N0MxNjYuMDYgNjcgMTc2Ljg4IDc3LjgyIDE3Ni44OCA5MS4xN0wxNzYuODggMTUyLjcxQzE3Ni44OCAxNjYuMDYgMTY2LjA2IDE3Ni44OCAxNTIuNzEgMTc2Ljg4TDkxLjE3IDE3Ni44OEM3Ny44MiAxNzYuODggNjcgMTY2LjA2IDY3IDE1Mi43MUw2NyA5MS4xN0M2NyA3Ny44MiA3Ny44MiA2NyA5MS4xNyA2N1oiIGZpbGw9IiNFRTc2MjMiPjwvcGF0aD4KPHBhdGggZD0iTTIyNS4yMyA2N0wyODYuNzcgNjdDMzAwLjEyIDY3IDMxMC45NCA3Ny44MiAzMTAuOTQgOTEuMTdMMzEwLjk0IDE1Mi43MUMzMTAuOTQgMTY2LjA2IDMwMC4xMiAxNzYuODggMjg2Ljc3IDE3Ni44OEwyMjUuMjMgMTc2Ljg4QzIxMS44OCAxNzYuODggMjAxLjA2IDE2Ni4wNiAyMDEuMDYgMTUyLjcxTDIwMS4wNiA5MS4xN0MyMDEuMDYgNzcuODIgMjExLjg4IDY3IDIyNS4yMyA2N1oiIGZpbGw9IiNFRTc2MjMiPjwvcGF0aD4KPHBhdGggZD0iTTM1OS4yOSA2N0w0MjAuODMgNjdDNDM0LjE4IDY3IDQ0NSA3Ny44MiA0NDUgOTEuMTdMNDQ1IDE1Mi43MUM0NDUgMTY2LjA2IDQzNC4xOCAxNzYuODggNDIwLjgzIDE3Ni44OEwzNTkuMjkgMTc2Ljg4QzM0NS45NCAxNzYuODggMzM1LjEyIDE2Ni4wNiAzMzUuMTIgMTUyLjcxTDMzNS4xMiA5MS4xN0MzMzUuMTIgNzcuODIgMzQ1Ljk0IDY3IDM1OS4yOSA2N1oiIGZpbGw9IiNFRTc2MjMiPjwvcGF0aD4KPHBhdGggZD0iTTkxLjE3IDIwMS4wNkwxNTIuNzEgMjAxLjA2QzE2Ni4wNiAyMDEuMDYgMTc2Ljg4IDIxMS44OCAxNzYuODggMjI1LjIzTDE3Ni44OCAyODYuNzdDMTc2Ljg4IDMwMC4xMiAxNjYuMDYgMzEwLjk0IDE1Mi43MSAzMTAuOTRMOTEuMTcgMzEwLjk0Qzc3LjgyIDMxMC45NCA2NyAzMDAuMTIgNjcgMjg2Ljc3TDY3IDIyNS4yM0M2NyAyMTEuODggNzcuODIgMjAxLjA2IDkxLjE3IDIwMS4wNloiIGZpbGw9IiM1Qzg2QUUiPjwvcGF0aD4KPHBhdGggZD0iTTIyNS4yMyAyMDEuMDZMMjg2Ljc3IDIwMS4wNkMzMDAuMTIgMjAxLjA2IDMxMC45NCAyMTEuODggMzEwLjk0IDIyNS4yM0wzMTAuOTQgMjg2Ljc3QzMxMC45NCAzMDAuMTIgMzAwLjEyIDMxMC45NCAyODYuNzcgMzEwLjk0TDIyNS4yMyAzMTAuOTRDMjExLjg4IDMxMC45NCAyMDEuMDYgMzAwLjEyIDIwMS4wNiAyODYuNzdMMjAxLjA2IDIyNS4yM0MyMDEuMDYgMjExLjg4IDIxMS44OCAyMDEuMDYgMjI1LjIzIDIwMS4wNloiIGZpbGw9IiNFRTc2MjMiPjwvcGF0aD4KPHBhdGggZD0iTTM1OS4yOSAyMDEuMDZMNDIwLjgzIDIwMS4wNkM0MzQuMTggMjAxLjA2IDQ0NSAyMTEuODggNDQ1IDIyNS4yM0w0NDUgMjg2Ljc3QzQ0NSAzMDAuMTIgNDM0LjE4IDMxMC45NCA0MjAuODMgMzEwLjk0TDM1OS4yOSAzMTAuOTRDMzQ1Ljk0IDMxMC45NCAzMzUuMTIgMzAwLjEyIDMzNS4xMiAyODYuNzdMMzM1LjEyIDIyNS4yM0MzMzUuMTIgMjExLjg4IDM0NS45NCAyMDEuMDYgMzU5LjI5IDIwMS4wNloiIGZpbGw9IiM1Qzg2QUUiPjwvcGF0aD4KPHBhdGggZD0iTTkxLjE3IDMzNS4xMkwxNTIuNzEgMzM1LjEyQzE2Ni4wNiAzMzUuMTIgMTc2Ljg4IDM0NS45NCAxNzYuODggMzU5LjI5TDE3Ni44OCA0MjAuODNDMTc2Ljg4IDQzNC4xOCAxNjYuMDYgNDQ1IDE1Mi43MSA0NDVMOTEuMTcgNDQ1Qzc3LjgyIDQ0NSA2NyA0MzQuMTggNjcgNDIwLjgzTDY3IDM1OS4yOUM2NyAzNDUuOTQgNzcuODIgMzM1LjEyIDkxLjE3IDMzNS4xMloiIGZpbGw9IiM1Qzg2QUUiPjwvcGF0aD4KPHBhdGggZD0iTTIyNS4yMyAzMzUuMTJMMjg2Ljc3IDMzNS4xMkMzMDAuMTIgMzM1LjEyIDMxMC45NCAzNDUuOTQgMzEwLjk0IDM1OS4yOUwzMTAuOTQgNDIwLjgzQzMxMC45NCA0MzQuMTggMzAwLjEyIDQ0NSAyODYuNzcgNDQ1TDIyNS4yMyA0NDVDMjExLjg4IDQ0NSAyMDEuMDYgNDM0LjE4IDIwMS4wNiA0MjAuODNMMjAxLjA2IDM1OS4yOUMyMDEuMDYgMzQ1Ljk0IDIxMS44OCAzMzUuMTIgMjI1LjIzIDMzNS4xMloiIGZpbGw9IiNFRTc2MjMiPjwvcGF0aD4KPHBhdGggZD0iTTM1OS4yOSAzMzUuMTJMNDIwLjgzIDMzNS4xMkM0MzQuMTggMzM1LjEyIDQ0NSAzNDUuOTQgNDQ1IDM1OS4yOUw0NDUgNDIwLjgzQzQ0NSA0MzQuMTggNDM0LjE4IDQ0NSA0MjAuODMgNDQ1TDM1OS4yOSA0NDVDMzQ1Ljk0IDQ0NSAzMzUuMTIgNDM0LjE4IDMzNS4xMiA0MjAuODNMMzM1LjEyIDM1OS4yOUMzMzUuMTIgMzQ1Ljk0IDM0NS45NCAzMzUuMTIgMzU5LjI5IDMzNS4xMloiIGZpbGw9IiM1Qzg2QUUiPjwvcGF0aD4KPC9zdmc+Cg==">
+<link rel="apple-touch-icon" href="https://saptechs.co.in/apple-touch-icon.png">
+<link rel="canonical" href="https://saptechs.co.in/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saptechs.co.in/">
+<meta property="og:title" content="SAPTECHS — SAP technical solutions on ABAP, Fiori, BTP, CAPM, RAP, CDS, HANA and AMDP">
+<meta property="og:description" content="SAPTECHS is an SAP partner delivering SAP technical solutions — ABAP, RAP, CDS, AMDP, SAP HANA, Fiori/UI5, CAPM and SAP BTP — and building its own products: UniverseIT, ProficIT, DynAppro, BuilDyn and KirikIT.">
+<meta property="og:image" content="https://saptechs.co.in/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SAPTECHS — Compete with yesterday">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://saptechs.co.in/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Public+Sans:ital,wght@0,300..800;1,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* ============================================================
+   SAPTECHS — the house register.
+   The palette, the type and the component set are lifted, rule
+   for rule, from docs/site/index.html (the UniverseIT page), so
+   the firm and its product read as one hand.
+   ============================================================ */
+
+:root {
+  --brand:      #0C447C;
+  --brand-lift: #1A6BB8;
+  --gold:       #B8791A;
+  --gold-bright:#F2A413;
+
+  /* the logo's own colours, from app/launchpad/logo.svg */
+  --logo-ink:   #0C447C;
+  --logo-gold:  #EE7623;
+
+  --bg:      #F4F6F9;
+  --surface: #FFFFFF;
+  --sunken:  #EDF1F6;
+  --text:    #16202C;
+  --muted:   #5C6B7A;
+  --faint:   #8496A6;
+  --border:  #DDE3EA;
+  --rule:    #C9D3DE;
+
+  --ok:     #1A7F47;
+  --warn:   #9A5B00;
+  --danger: #B3261E;
+
+  /* The dark bands are dark in BOTH themes — a committed ground. */
+  --ink:        #0A1A2F;
+  --ink-2:      #10263F;
+  --ink-text:   #E9EFF6;
+  --ink-muted:  #92A8BF;
+  --ink-faint:  #6B84A0;
+  --ink-rule:   #1E3A5C;
+  --ink-accent: #F2A413;
+  --ink-lift:   #6FB2EE;
+
+  --shadow: 0 1px 2px rgba(12,68,124,.06), 0 8px 24px -12px rgba(12,68,124,.18);
+  --shadow-lg: 0 2px 4px rgba(12,68,124,.07), 0 24px 56px -20px rgba(12,68,124,.28);
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans:  "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --wide: 1180px;
+  --read: 68ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand:      #2E7FCB;
+    --brand-lift: #6FB2EE;
+    --gold:       #E2A13B;
+    --gold-bright:#F5B942;
+    --logo-ink:   #E9EFF6;
+
+    --bg:      #0E1620;
+    --surface: #172230;
+    --sunken:  #121C28;
+    --text:    #E8EEF5;
+    --muted:   #9FB0C0;
+    --faint:   #7C8FA2;
+    --border:  #2A3746;
+    --rule:    #35455A;
+
+    --ok:     #4EC27F;
+    --warn:   #E0A34A;
+    --danger: #EF8079;
+
+    --ink:      #08131F;
+    --ink-2:    #0C1E33;
+    --ink-rule: #1B334F;
+
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    --shadow-lg: 0 2px 4px rgba(0,0,0,.4), 0 24px 56px -20px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  --brand:      #2E7FCB;
+  --brand-lift: #6FB2EE;
+  --gold:       #E2A13B;
+  --gold-bright:#F5B942;
+  --logo-ink:   #E9EFF6;
+
+  --bg:      #0E1620;
+  --surface: #172230;
+  --sunken:  #121C28;
+  --text:    #E8EEF5;
+  --muted:   #9FB0C0;
+  --faint:   #7C8FA2;
+  --border:  #2A3746;
+  --rule:    #35455A;
+
+  --ok:     #4EC27F;
+  --warn:   #E0A34A;
+  --danger: #EF8079;
+
+  --ink:      #08131F;
+  --ink-2:    #0C1E33;
+  --ink-rule: #1B334F;
+
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  --shadow-lg: 0 2px 4px rgba(0,0,0,.4), 0 24px 56px -20px rgba(0,0,0,.7);
+}
+
+* { box-sizing: border-box; }
+/* `hidden` must win over any display rule set below (the prototype dialog is a grid). */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -0.011em; }
+p { margin: 0; }
+a { color: inherit; }
+
+.wrap { max-width: var(--wide); margin: 0 auto; padding: 0 28px; }
+
+/* --- the seal rule: a double hairline, the certificate-border motif --- */
+.seal-rule { border: 0; height: 3px; background:
+  linear-gradient(var(--rule), var(--rule)) top/100% 1px no-repeat,
+  linear-gradient(var(--rule), var(--rule)) bottom/100% 1px no-repeat;
+  margin: 0; }
+
+/* --- eyebrow labels --- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.eyebrow.on-ink { color: var(--ink-accent); }
+.eyebrow.on-ink::after { background: var(--ink-rule); }
+
+/* ================= NAV ================= */
+.nav {
+  position: sticky; top: 0; z-index: 60;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+}
+.nav-in { max-width: var(--wide); margin: 0 auto; padding: 0 28px;
+  height: 62px; display: flex; align-items: center; gap: 28px; }
+.logo {
+  display: flex; align-items: center; gap: 9px; font-family: var(--sans);
+  font-size: 19.5px; font-weight: 700; letter-spacing: .017em;
+  text-decoration: none; color: var(--logo-ink);
+}
+.logo .mark { width: 30px; height: 30px; flex: none; display: block; }
+.logo .it { color: var(--logo-gold); }
+/* Fourteen links in a row that does not wrap: the tighter gap and padding buy
+   back more width than the fourteenth costs, so the bar is no wider than it
+   was at thirteen. */
+.nav-links { display: flex; gap: 2px; margin-left: auto; align-items: center; }
+.nav-links a {
+  font-size: 13.5px; font-weight: 500; color: var(--muted);
+  text-decoration: none; padding: 7px 8px; border-radius: 7px; white-space: nowrap;
+}
+.nav-links a:hover { color: var(--text); background: var(--sunken); }
+/* the section you are currently in */
+.nav-links a.on, .nav-links a.on:hover {
+  color: var(--gold-bright);
+  background: color-mix(in srgb, var(--gold-bright) 13%, transparent);
+}
+.theme-btn {
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  width: 32px; height: 32px; border-radius: 8px; cursor: pointer;
+  display: grid; place-items: center; font-size: 14px; padding: 0;
+}
+.theme-btn:hover { color: var(--text); border-color: var(--rule); }
+@media (max-width: 860px) { .nav-links a { display: none; } }
+
+/* ================= HERO ================= */
+.hero {
+  background: var(--ink); color: var(--ink-text);
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--ink-rule);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(1100px 520px at 78% -10%, rgba(46,127,203,.30), transparent 62%),
+    radial-gradient(760px 420px at 8% 108%, rgba(242,164,19,.13), transparent 60%);
+  pointer-events: none;
+}
+/* faint ruled-ledger grid, the register motif */
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(to bottom, rgba(146,168,191,.055) 0 1px, transparent 1px 34px);
+  mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 72%, transparent);
+  pointer-events: none;
+}
+.hero-in { position: relative; z-index: 2; max-width: var(--wide); margin: 0 auto;
+  padding: 74px 28px 78px; display: grid; grid-template-columns: 1.06fr .94fr; gap: 60px; align-items: start; }
+@media (max-width: 980px) { .hero-in { grid-template-columns: 1fr; gap: 44px; padding: 56px 28px 60px; } }
+
+.hero h1 {
+  font-size: clamp(40px, 5.6vw, 66px); line-height: 1.03;
+  font-weight: 400; letter-spacing: -.028em; margin: 20px 0 0;
+  color: #fff;
+}
+.hero h1 em { font-style: italic; color: var(--ink-accent); }
+.hero-sub { margin-top: 22px; font-size: 18px; line-height: 1.62; color: var(--ink-muted); max-width: 52ch; }
+.hero-sub strong { color: var(--ink-text); font-weight: 600; }
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn {
+  font-family: var(--sans); font-size: 14.5px; font-weight: 600;
+  padding: 12px 20px; border-radius: 9px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  border: 1px solid transparent; transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-gold { background: var(--ink-accent); color: #24160A; }
+.btn-gold:hover { background: #FFB92E; }
+.btn-ghost { border-color: var(--ink-rule); color: var(--ink-text); background: rgba(255,255,255,.03); }
+.btn-ghost:hover { border-color: var(--ink-lift); background: rgba(111,178,238,.10); }
+
+.hero-note {
+  margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--ink-rule);
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em;
+  color: var(--ink-faint); line-height: 1.75;
+}
+
+/* ---- the governance spine: hero's thesis object ---- */
+.spine { position: relative; }
+.spine-head {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--ink-faint); margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.spine-head::after { content: ""; flex: 1; height: 1px; background: var(--ink-rule); }
+.spine-list { list-style: none; margin: 0; padding: 0; position: relative; }
+.spine-list::before {
+  content: ""; position: absolute; left: 13px; top: 14px; bottom: 14px;
+  width: 1px; background: linear-gradient(var(--ink-rule), rgba(242,164,19,.5));
+}
+.node {
+  position: relative; display: block; width: 100%; text-align: left;
+  background: none; border: 0; cursor: pointer; color: inherit;
+  font: inherit; padding: 9px 14px 9px 40px; border-radius: 9px;
+  transition: background .16s ease;
+}
+.node::before {
+  content: ""; position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--ink); border: 1.5px solid var(--ink-rule);
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.node .n-name { font-size: 15px; font-weight: 600; color: var(--ink-muted); transition: color .16s ease; }
+.node .n-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); letter-spacing: .05em; }
+.node:hover { background: rgba(111,178,238,.07); }
+.node[aria-selected="true"] { background: rgba(111,178,238,.10); }
+.node[aria-selected="true"]::before {
+  background: var(--ink-accent); border-color: var(--ink-accent);
+  box-shadow: 0 0 0 4px rgba(242,164,19,.16);
+}
+.node[aria-selected="true"] .n-name { color: #fff; }
+.node:focus-visible { outline: 2px solid var(--ink-lift); outline-offset: 1px; }
+
+.spine-panel {
+  margin-top: 18px; padding: 18px 20px; border-radius: 12px;
+  background: rgba(255,255,255,.045); border: 1px solid var(--ink-rule);
+  min-height: 132px;
+}
+.spine-panel h3 { font-size: 20px; color: #fff; margin-bottom: 6px; }
+.spine-panel p { font-size: 14.5px; color: var(--ink-muted); line-height: 1.6; }
+.spine-panel .carries {
+  margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--ink-rule);
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.chip {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .03em;
+  padding: 3px 8px; border-radius: 5px;
+  background: rgba(111,178,238,.12); color: var(--ink-lift);
+  border: 1px solid rgba(111,178,238,.2);
+}
+
+
+/* ================= STAT LEDGER ================= */
+.ledger { background: var(--ink-2); border-bottom: 1px solid var(--ink-rule); }
+.ledger-in {
+  max-width: var(--wide); margin: 0 auto; padding: 0 28px;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+}
+.stat { padding: 24px 20px 26px; border-left: 1px solid var(--ink-rule); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat .v {
+  font-family: var(--serif); font-size: 25px; font-weight: 500;
+  color: #fff; letter-spacing: -.015em; line-height: 1.12;
+}
+.stat .k { margin-top: 8px; font-size: 12.5px; color: var(--ink-muted); line-height: 1.4; }
+@media (max-width: 880px) {
+  .ledger-in { grid-template-columns: repeat(2, 1fr); }
+  .stat { border-left: 0; border-top: 1px solid var(--ink-rule); padding-left: 0; padding-right: 20px; }
+  .stat:nth-child(-n+2) { border-top: 0; }
+  .stat:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--ink-rule); }
+}
+
+/* ================= SECTIONS ================= */
+section { padding: 92px 0; }
+section.tight { padding: 68px 0; }
+.sec-head { max-width: 760px; margin-bottom: 44px; }
+.sec-head h2 {
+  font-size: clamp(29px, 3.4vw, 42px); line-height: 1.13; margin-top: 16px;
+  font-weight: 400; letter-spacing: -.022em;
+}
+.sec-head .lede { margin-top: 16px; font-size: 17.5px; color: var(--muted); line-height: 1.62; max-width: var(--read); }
+.sec-head .lede strong { color: var(--text); font-weight: 600; }
+
+.band-ink { background: var(--ink); color: var(--ink-text); }
+.band-ink h2, .band-ink h3 { color: #fff; }
+.band-ink .lede { color: var(--ink-muted); }
+.band-ink .lede strong { color: var(--ink-text); }
+.band-sunken { background: var(--sunken); }
+
+/* ================= MODULE EXPLORER ================= */
+.explorer-bar {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  margin-bottom: 20px;
+}
+.search {
+  flex: 1 1 240px; max-width: 330px; position: relative;
+}
+.search input {
+  width: 100%; font-family: var(--sans); font-size: 14px;
+  padding: 10px 12px 10px 34px; border-radius: 9px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.search input::placeholder { color: var(--faint); }
+.search input:focus-visible { outline: 2px solid var(--brand-lift); outline-offset: -1px; border-color: transparent; }
+.search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--faint); }
+.count-out { font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: .04em; margin-left: auto; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 26px; }
+.filt {
+  font-family: var(--sans); font-size: 12.5px; font-weight: 500;
+  padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  transition: all .15s ease;
+}
+.filt:hover { border-color: var(--rule); color: var(--text); }
+.filt[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+.filt:focus-visible { outline: 2px solid var(--brand-lift); outline-offset: 2px; }
+
+.expand-btn { white-space: nowrap; }
+.inst-legend {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--faint); margin: 4px 0 8px;
+}
+
+.mod-grid { display: flex; flex-direction: column; gap: 9px; }
+
+.mcard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+.mcard:hover { border-color: var(--rule); }
+.mcard.open { border-color: var(--brand); box-shadow: var(--shadow); }
+
+.mcard-head {
+  width: 100%; display: flex; align-items: center; gap: 16px;
+  background: none; border: 0; cursor: pointer; color: inherit;
+  font: inherit; text-align: left; padding: 15px 18px;
+}
+.mcard-head:focus-visible { outline: 2px solid var(--brand-lift); outline-offset: -3px; }
+.m-idx {
+  font-size: 9px; color: var(--gold); flex: none; width: 14px;
+  line-height: 1; padding-top: 7px;
+}
+.m-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.m-name { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: -.016em; line-height: 1.25; }
+.m-meta { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: .03em; }
+.m-chev {
+  flex: none; font-size: 20px; color: var(--faint); line-height: 1;
+  transition: transform .2s cubic-bezier(.4,0,.2,1);
+}
+.mcard.open .m-chev { transform: rotate(90deg); color: var(--brand); }
+
+.mcard-subs {
+  border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+}
+.sub {
+  padding: 18px 20px 20px;
+  border-top: 1px solid var(--border); border-left: 1px solid var(--border);
+  margin: -1px 0 0 -1px;
+}
+.sub-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.sub-name { font-size: 16px; font-weight: 700; letter-spacing: -.005em; }
+.sub-flags { display: flex; align-items: center; gap: 9px; flex: none; }
+.sub-d { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-top: 6px; }
+
+.sub-inst { display: flex; gap: 4px; margin-top: 11px; }
+.itag {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .07em;
+  padding: 2px 6px; border-radius: 4px;
+  border: 1px solid var(--border); color: var(--faint);
+  background: var(--sunken); opacity: .5;
+}
+.itag.yes {
+  opacity: 1; color: var(--brand); background: color-mix(in srgb, var(--brand) 9%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 26%, transparent);
+}
+
+.fn-list {
+  list-style: none; margin: 13px 0 0; padding: 0;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.fn-list li {
+  font-size: 13px; line-height: 1.45; color: var(--muted);
+  padding-left: 15px; position: relative;
+}
+.fn-list li::before {
+  content: ""; position: absolute; left: 2px; top: 8px;
+  width: 4px; height: 4px; border-radius: 1px; background: var(--rule);
+}
+.fn-list li.hit { color: var(--text); font-weight: 600; }
+.fn-list li.hit::before { background: var(--gold-bright); }
+
+/* ================= DIFFERENTIATORS ================= */
+.diffs { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 0; }
+.diff {
+  border-top: 1px solid var(--ink-rule); padding: 22px 26px 24px 0;
+  display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start;
+}
+.diff .rank {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  color: var(--ink-accent); font-variant-numeric: tabular-nums; padding-top: 3px;
+}
+.diff h3 { font-size: 19px; margin-bottom: 6px; line-height: 1.25; }
+.diff p { font-size: 14px; color: var(--ink-muted); line-height: 1.58; }
+.diff .ev {
+  margin-top: 10px; font-family: var(--mono); font-size: 10.5px;
+  color: var(--ink-faint); letter-spacing: .03em; word-break: break-word;
+}
+
+.rules { display: flex; flex-direction: column; }
+.rule-item {
+  padding: 17px 0; border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: 26px 1fr; gap: 15px; align-items: start;
+}
+.rule-item:last-child { border-bottom: 1px solid var(--border); }
+.rule-item .r-m { color: var(--gold); font-size: 11px; padding-top: 5px; }
+.rule-item h3 { font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: -.005em; }
+.rule-item p { font-size: 14px; color: var(--muted); line-height: 1.58; margin-top: 4px; }
+.rule-item p em { font-style: italic; color: var(--text); }
+
+/* ================= IDENTITY ================= */
+.layers { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 760px) { .layers { grid-template-columns: 1fr; } }
+.layer {
+  border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px 22px;
+  background: var(--surface);
+}
+.layer.local { border-style: dashed; }
+.layer h3 { font-size: 21px; margin-bottom: 3px; }
+.layer .l-where {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 13px;
+}
+.layer dl { margin: 0; display: grid; grid-template-columns: 74px 1fr; gap: 8px 14px; }
+.layer dt {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--faint); padding-top: 3px;
+}
+.layer dd { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+.layer dd strong { color: var(--text); font-weight: 600; }
+
+.rule-quote {
+  margin: 30px 0; padding: 24px 28px; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+}
+.rule-quote p {
+  font-family: var(--serif); font-size: clamp(19px, 2.2vw, 24px); line-height: 1.42;
+  letter-spacing: -.012em; text-wrap: balance;
+}
+.rule-quote p + p { margin-top: 10px; }
+.rule-quote .rq-src {
+  margin-top: 14px; font-family: var(--mono); font-size: 10.5px;
+  color: var(--faint); letter-spacing: .05em;
+}
+
+.case-panel {
+  margin-top: 18px; border: 1px solid var(--border); border-radius: 12px;
+  background: var(--surface); padding: 22px 24px 24px;
+}
+.case-panel h3 { font-size: 21px; margin-bottom: 6px; }
+.case-panel > p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+.case-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 10px; margin-top: 18px; }
+.fact {
+  border: 1px solid var(--border); border-radius: 9px; padding: 12px 14px;
+  border-left: 3px solid var(--fc, var(--rule));
+}
+.fact .f-k {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .11em; text-transform: uppercase;
+  color: var(--fc, var(--faint)); margin-bottom: 5px;
+}
+.fact .f-v { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.case-safety {
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 13.5px; color: var(--muted); line-height: 1.55;
+}
+.case-safety b { color: var(--text); }
+
+/* ================= GOVERNANCE CARDS ================= */
+.gov-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.gov {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px 22px 24px;
+  display: flex; flex-direction: column;
+}
+.gov .g-ico {
+  width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--brand) 11%, transparent);
+  color: var(--brand); margin-bottom: 14px;
+}
+.gov h3 { font-size: 19.5px; margin-bottom: 7px; }
+.gov p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 13px; }
+.gov .g-fact {
+  margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border);
+  font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: .03em;
+}
+
+/* ================= DEMO & CONTACT ================= */
+.demo-hold { max-width: 780px; }
+.demo-open { font-size: 15px; padding: 14px 26px; }
+.demo-open::after { content: " \2193"; opacity: .8; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--faint); font-weight: 500;
+}
+.field label .req { color: var(--gold); }
+.field input, .field select, .field textarea {
+  font-family: var(--sans); font-size: 14.5px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 9px;
+  padding: 11px 12px; width: 100%;
+}
+.field textarea { resize: vertical; min-height: 92px; line-height: 1.5; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 2px solid var(--brand-lift); outline-offset: -1px; border-color: transparent;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--faint); }
+.field.bad input, .field.bad select { border-color: var(--danger); }
+.field .err { font-size: 12px; color: var(--danger); display: none; }
+.field.bad .err { display: block; }
+
+.want { display: flex; flex-wrap: wrap; gap: 7px; }
+.want button {
+  font-family: var(--sans); font-size: 12.5px; padding: 7px 12px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer;
+}
+.want button:hover { border-color: var(--rule); color: var(--text); }
+.want button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+/* honeypot: off-screen rather than display:none, which some bots skip */
+.field.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.sent.warn { border-color: var(--warn); background: color-mix(in srgb, var(--warn) 8%, var(--surface)); }
+.form-foot { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+.form-note { font-size: 12.5px; color: var(--faint); line-height: 1.5; flex: 1 1 220px; }
+
+.sent {
+  border: 1px solid var(--ok); border-radius: 12px; padding: 22px 24px;
+  background: color-mix(in srgb, var(--ok) 7%, var(--surface));
+}
+.sent h3 { font-size: 21px; margin-bottom: 6px; }
+.sent p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+.sent pre {
+  margin-top: 14px; padding: 14px; border-radius: 9px; background: var(--sunken);
+  border: 1px solid var(--border); font-family: var(--mono); font-size: 11.5px;
+  color: var(--muted); white-space: pre-wrap; word-break: break-word; line-height: 1.6;
+  max-height: 220px; overflow-y: auto;
+}
+.sent .form-foot { margin-top: 16px; }
+
+.co-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(224px, 1fr)); gap: 1px; background: var(--ink-rule);
+  border: 1px solid var(--ink-rule); border-radius: 12px; overflow: hidden; }
+.co-item { background: var(--ink); padding: 20px 22px 22px; }
+.co-k {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase;
+  color: var(--ink-accent); margin-bottom: 9px;
+}
+.co-v { font-size: 15.5px; color: #fff; font-weight: 600; line-height: 1.4; display: block; word-break: break-word; }
+.co-v.mail, .co-v.tel { text-decoration: none; border-bottom: 1px solid rgba(242,164,19,.4); }
+.co-v.mail:hover, .co-v.tel:hover { border-bottom-color: var(--ink-accent); }
+.co-s { font-size: 13px; color: var(--ink-muted); line-height: 1.55; margin-top: 8px; }
+.co-item .fillme { border-color: var(--ink-rule); color: var(--ink-faint); }
+
+.mail-link, .mail-inline { color: var(--brand); font-weight: 600; word-break: break-all; }
+.mail-link { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--brand) 35%, transparent); }
+.mail-link:hover { border-bottom-color: var(--brand); }
+.fillme {
+  font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+  border: 1px dashed var(--rule); border-radius: 6px; padding: 2px 8px; display: inline-block;
+}
+.btn-solid { background: var(--brand); color: #fff; }
+.btn-solid:hover { background: var(--brand-lift); }
+.btn-line { border-color: var(--border); color: var(--text); background: var(--surface); }
+.btn-line:hover { border-color: var(--brand-lift); color: var(--brand); }
+
+footer { background: var(--ink-2); color: var(--ink-faint); border-top: 1px solid var(--ink-rule); }
+.foot-in {
+  max-width: var(--wide); margin: 0 auto; padding: 26px 28px;
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
+}
+
+/* ================= REVEAL ================= */
+.rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,.8,.3,1); }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+:where(a, button):focus-visible { outline: 2px solid var(--brand-lift); outline-offset: 2px; border-radius: 4px; }
+
+/* ================= SAPTECHS ADDITIONS =================
+   Everything above is the UniverseIT sheet unchanged. What follows is only
+   what this page needs and that one did not: the product register, the stack
+   tags on a service, and the partner mark. */
+
+/* the wordmark's second half, in the house gold */
+.logo .it { color: var(--logo-gold); }
+
+/* a service's stack tags reuse .itag; the legend above them reuses .inst-legend */
+.svc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 11px; }
+
+/* ================= PRODUCT REGISTER ================= */
+.prods { display: flex; flex-direction: column; gap: 14px; }
+.prod {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  box-shadow: var(--shadow); overflow: hidden;
+  display: grid; grid-template-columns: 1fr 296px;
+}
+@media (max-width: 880px) { .prod { grid-template-columns: 1fr; } }
+.prod-main { padding: 28px 30px 30px; min-width: 0; }
+.prod-side {
+  background: var(--sunken); border-left: 1px solid var(--border);
+  padding: 26px 24px; display: flex; flex-direction: column; gap: 16px;
+}
+@media (max-width: 880px) { .prod-side { border-left: 0; border-top: 1px solid var(--border); } }
+
+.prod-kick {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 9px;
+}
+.prod-name {
+  font-family: var(--serif); font-size: 30px; font-weight: 600;
+  letter-spacing: -.02em; line-height: 1.1; margin: 0;
+}
+.prod-name .it { color: var(--gold); }
+.prod-line { font-size: 16px; color: var(--text); font-weight: 600; margin-top: 7px; line-height: 1.4; }
+.prod-body { font-size: 14.5px; color: var(--muted); line-height: 1.62; margin-top: 12px; max-width: 62ch; }
+.prod .fn-list { margin-top: 15px; }
+.prod-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.prod-cta .btn { font-size: 13.5px; padding: 10px 17px; }
+
+.prod-fact .f-k {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 6px;
+}
+.prod-fact .f-v { font-size: 13.5px; color: var(--text); line-height: 1.5; font-weight: 600; }
+.prod-fact .f-v.soft { color: var(--muted); font-weight: 400; }
+.prod-fact .chip {
+  background: color-mix(in srgb, var(--brand) 9%, transparent);
+  color: var(--brand); border-color: color-mix(in srgb, var(--brand) 22%, transparent);
+  margin: 3px 3px 0 0; display: inline-block;
+}
+
+/* ================= PARTNERSHIP ================= */
+.partner-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: start; }
+@media (max-width: 900px) { .partner-grid { grid-template-columns: 1fr; gap: 30px; } }
+.partner-body p { font-size: 16px; line-height: 1.66; color: var(--ink-muted); max-width: var(--read); }
+.partner-body p + p { margin-top: 14px; }
+.partner-body p strong { color: var(--ink-text); font-weight: 600; }
+.partner-mark {
+  border: 1px solid var(--ink-rule); border-radius: 13px; padding: 24px 26px;
+  background: rgba(255,255,255,.045);
+}
+.partner-mark .pm-k {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ink-accent); margin-bottom: 10px;
+}
+.partner-mark .pm-v { font-family: var(--serif); font-size: 25px; color: #fff; line-height: 1.2; }
+.partner-mark dl { margin: 18px 0 0; display: grid; grid-template-columns: 96px 1fr; gap: 9px 14px; }
+.partner-mark dt {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-faint); padding-top: 2px;
+}
+.partner-mark dd { margin: 0; font-size: 13.5px; color: var(--ink-muted); line-height: 1.5; }
+.tm-note {
+  margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--ink-rule);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .03em;
+  color: var(--ink-faint); line-height: 1.7;
+}
+</style>
+</head>
+<body>
+<!-- ============================ NAV ============================ -->
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top" aria-label="SAPTECHS — home">
+      <!-- Brand pack v3 (mark H), the BlueField favicon artwork inlined so the
+           nav mark and the browser tab are the same drawing, not two that drift.
+           Kept inline rather than <img>: it is above the fold and one request
+           fewer. -->
+      <svg class="mark" viewBox="0 0 512 512" role="img" aria-hidden="true">
+        <path d="M102.4 0L409.6 0C466.15 0 512 45.85 512 102.4L512 409.6C512 466.15 466.15 512 409.6 512L102.4 512C45.85 512 0 466.15 0 409.6L0 102.4C0 45.85 45.85 0 102.4 0Z" fill="#0C447C"></path>
+        <path d="M91.17 67L152.71 67C166.06 67 176.88 77.82 176.88 91.17L176.88 152.71C176.88 166.06 166.06 176.88 152.71 176.88L91.17 176.88C77.82 176.88 67 166.06 67 152.71L67 91.17C67 77.82 77.82 67 91.17 67Z" fill="#EE7623"></path>
+        <path d="M225.23 67L286.77 67C300.12 67 310.94 77.82 310.94 91.17L310.94 152.71C310.94 166.06 300.12 176.88 286.77 176.88L225.23 176.88C211.88 176.88 201.06 166.06 201.06 152.71L201.06 91.17C201.06 77.82 211.88 67 225.23 67Z" fill="#EE7623"></path>
+        <path d="M359.29 67L420.83 67C434.18 67 445 77.82 445 91.17L445 152.71C445 166.06 434.18 176.88 420.83 176.88L359.29 176.88C345.94 176.88 335.12 166.06 335.12 152.71L335.12 91.17C335.12 77.82 345.94 67 359.29 67Z" fill="#EE7623"></path>
+        <path d="M91.17 201.06L152.71 201.06C166.06 201.06 176.88 211.88 176.88 225.23L176.88 286.77C176.88 300.12 166.06 310.94 152.71 310.94L91.17 310.94C77.82 310.94 67 300.12 67 286.77L67 225.23C67 211.88 77.82 201.06 91.17 201.06Z" fill="#5C86AE"></path>
+        <path d="M225.23 201.06L286.77 201.06C300.12 201.06 310.94 211.88 310.94 225.23L310.94 286.77C310.94 300.12 300.12 310.94 286.77 310.94L225.23 310.94C211.88 310.94 201.06 300.12 201.06 286.77L201.06 225.23C201.06 211.88 211.88 201.06 225.23 201.06Z" fill="#EE7623"></path>
+        <path d="M359.29 201.06L420.83 201.06C434.18 201.06 445 211.88 445 225.23L445 286.77C445 300.12 434.18 310.94 420.83 310.94L359.29 310.94C345.94 310.94 335.12 300.12 335.12 286.77L335.12 225.23C335.12 211.88 345.94 201.06 359.29 201.06Z" fill="#5C86AE"></path>
+        <path d="M91.17 335.12L152.71 335.12C166.06 335.12 176.88 345.94 176.88 359.29L176.88 420.83C176.88 434.18 166.06 445 152.71 445L91.17 445C77.82 445 67 434.18 67 420.83L67 359.29C67 345.94 77.82 335.12 91.17 335.12Z" fill="#5C86AE"></path>
+        <path d="M225.23 335.12L286.77 335.12C300.12 335.12 310.94 345.94 310.94 359.29L310.94 420.83C310.94 434.18 300.12 445 286.77 445L225.23 445C211.88 445 201.06 434.18 201.06 420.83L201.06 359.29C201.06 345.94 211.88 335.12 225.23 335.12Z" fill="#EE7623"></path>
+        <path d="M359.29 335.12L420.83 335.12C434.18 335.12 445 345.94 445 359.29L445 420.83C445 434.18 434.18 445 420.83 445L359.29 445C345.94 445 335.12 434.18 335.12 420.83L335.12 359.29C335.12 345.94 345.94 335.12 359.29 335.12Z" fill="#5C86AE"></path>
+      </svg><span>SAP<span class="it">TECHS</span></span></a>
+    <div class="nav-links">
+      <a href="#practice">Practice</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#partnership">SAP partner</a>
+      <a href="#engagement">Engagement</a>
+      <a href="#difference">Difference</a>
+      <a href="#enquire" data-open-demo>Enquire</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <div class="eyebrow on-ink">SAP partner · Technical solutions · Own products</div>
+      <h1>We do the SAP work, and we <em>run</em> what we build.</h1>
+      <p class="hero-sub">
+        <strong>A partner who only advises has never had to answer a support call at nine on a Monday.</strong>
+        SAPTECHS is an SAP partner doing the technical half of the platform — ABAP and RAP, CDS and AMDP,
+        Fiori and UI5, CAP on BTP, HANA underneath — and shipping our own products on exactly that stack.
+        <!-- UIT-WHY 2026-10-06: the first mention of UniverseIT on the page carried no ™.
+             Cause:  the hero copy predates the September 2026 decision to mark the wordmark ™.
+             Change: ™ on this first mention only, as the brand rules ask for running text.
+             Revert risk: the page uses the mark unmarked, inconsistent with every other brand asset. -->
+        UniverseIT™ is not a slide in a deck: it is a multi-tenant SaaS on SAP BTP, with a HANA container
+        per institution, in production. Everything we offer, we have already had to live with.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#services">See what we do</a>
+        <a class="btn btn-ghost" href="#products">See what we have built</a>
+      </div>
+      <p class="hero-note">
+        Eight technologies, one team, five products.<br>
+        <span style="color:var(--ink-muted)">The person who designs it is the person who writes it.</span>
+      </p>
+    </div>
+
+    <!-- the stack, top to bottom -->
+    <div class="spine">
+      <div class="spine-head">The stack, top to bottom</div>
+      <ul class="spine-list" id="spineList" role="tablist" aria-label="The SAP stack we work in"></ul>
+      <div class="spine-panel" id="spinePanel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ STAT LEDGER ============================ -->
+<div class="ledger">
+  <div class="ledger-in">
+    <div class="stat"><div class="v">SAP partner</div><div class="k">Building on the platform,<br>not around the side of it</div></div>
+    <div class="stat"><div class="v">Whole slice</div><div class="k">Data model, service, UI and the<br>pipeline that deploys all three</div></div>
+    <div class="stat"><div class="v">Clean core</div><div class="k">Extensions live in RAP, CAP and<br>BTP — released APIs, upgrade-safe</div></div>
+    <!-- UIT-WHY 2026-09-29: the hero stat called ProficIT "a P2P app" after the card grew to seven processes.
+         Cause:  the stat line was written when P2P was ProficIT's only leg.
+         Change: name both ERPs: an education ERP and a process ERP on SAP.
+         Chosen: option A (education ERP / process ERP on SAP) over B (SAP process suite) — Jagadeesh.
+         Revert risk: the hero undersells ProficIT and contradicts its own card. -->
+    <div class="stat"><div class="v">Five products</div><div class="k">An education ERP, a process ERP on SAP,<br>an approvals engine, an app builder, a scorer</div></div>
+    <div class="stat"><div class="v">We operate it</div><div class="k">Multi-tenant on BTP: subscription,<br>upgrade and the 2 a.m. incident</div></div>
+  </div>
+</div>
+
+<!-- ============================ PRACTICE ============================ -->
+<section id="practice" class="tight">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Practice</div>
+      <h2>A technical practice, tested against our own product first.</h2>
+      <p class="lede">
+        Most SAP work fails in the seams — between the CDS view and the Fiori annotation, between the
+        BTP destination and the on-stack service, between what was demonstrated and what survives an
+        upgrade. We work the seams because <strong>we own a product that has to live through them</strong>.
+      </p>
+    </div>
+    <div class="gov-grid">
+      <div class="gov rv">
+        <div class="g-ico">⌘</div>
+        <h3>Technical, not theoretical</h3>
+        <p>Our people write ABAP, SQLScript, JavaScript and XML. We are not a layer of coordination on top of somebody else's developers — the estimate and the code come from the same desk.</p>
+        <div class="g-fact">ABAP · RAP · CDS · AMDP · UI5 · CAP</div>
+      </div>
+      <div class="gov rv">
+        <div class="g-ico">◫</div>
+        <h3>The whole vertical slice</h3>
+        <p>A requirement lands as a table, a view, a behaviour, a service, a tile and a role collection. We take all six rather than handing you an integration problem in the middle.</p>
+        <div class="g-fact">Model → service → UI → deployment</div>
+      </div>
+      <div class="gov rv">
+        <div class="g-ico">⚖</div>
+        <h3>Clean core as a rule</h3>
+        <p>Modifications to standard objects are a last resort we argue against. Released APIs, BAdIs, key-user extensibility and side-by-side extensions on BTP — so the next upgrade is a weekend, not a project.</p>
+        <div class="g-fact">Released APIs · side-by-side · ATC-clean</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="seal-rule">
+
+<!-- ============================ SERVICES ============================ -->
+<section id="services" class="band-sunken">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Services</div>
+      <h2>SAP technical solutions, listed by what we actually do in each one.</h2>
+      <p class="lede">
+        Open a practice to read it function by function. Filter by the technology you have a problem
+        in — a HANA push-down question and a Fiori launchpad question are not the same conversation —
+        or search straight for the thing you came to check.
+      </p>
+    </div>
+
+    <div class="explorer-bar rv">
+      <div class="search">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5 14 14"/></svg>
+        <input type="search" id="svcSearch" placeholder="Search every service…" aria-label="Search practices, services and the work inside them">
+      </div>
+      <button class="filt expand-btn" type="button" id="expandAll">Expand all</button>
+      <div class="count-out" id="svcCount"></div>
+    </div>
+
+    <div class="inst-legend rv">Technology</div>
+    <div class="filters rv" id="techFilters" role="group" aria-label="Filter by technology"></div>
+
+    <div class="mod-grid" id="svcGrid">
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">ABAP Development</span><span class="m-meta">Core ABAP engineering  ·  Enhancements and clean core  ·  Performance and code quality</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Core ABAP engineering</span></div><p class="sub-d">The everyday work of the core: the programs, the interfaces and the jobs the business runs on.</p><div class="svc-tags"><span class="itag yes">ABAP</span></div><ul class="fn-list"><li>Reports, ALV and selection screens</li><li>Object-oriented ABAP — classes, interfaces, exceptions</li><li>Function modules, BAPIs and RFC</li><li>IDoc extensions, custom IDocs and processing</li><li>File and API interfaces, inbound and outbound</li><li>Background jobs, job chains and error handling</li><li>Forms — SmartForms, Adobe Forms and SAPscript maintenance</li><li>Data loads — BDC, LSMW and their modern replacements</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Enhancements and clean core</span></div><p class="sub-d">Changing standard behaviour without changing standard objects, so the next upgrade stays an upgrade.</p><div class="svc-tags"><span class="itag yes">ABAP</span><span class="itag yes">RAP</span></div><ul class="fn-list"><li>BAdIs, enhancement spots and implicit enhancements</li><li>Key-user extensibility, and when to refuse it</li><li>ABAP Cloud with released APIs only</li><li>Custom-code impact analysis for an S/4HANA move</li><li>Remediation of code that will not survive the move</li><li>A written argument whenever a modification is the only way</li><li>Side-by-side alternatives on BTP where the core should stay untouched</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Performance and code quality</span></div><p class="sub-d">The nine-minute report, and the reason nobody has fixed it yet.</p><div class="svc-tags"><span class="itag yes">ABAP</span><span class="itag yes">HANA</span></div><ul class="fn-list"><li>ATC and Code Inspector runs, with the findings triaged</li><li>SQL trace, runtime analysis and where the time really goes</li><li>Nested loops and SELECTs inside them, pushed down</li><li>Internal-table work rewritten for HANA</li><li>Locking, commit and update-task review</li><li>Unit tests around what is about to be rewritten</li><li>A before-and-after measurement, not an opinion</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">RAP — ABAP RESTful Application Programming</span><span class="m-meta">Business objects  ·  Service exposure</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Business objects</span></div><p class="sub-d">The modern shape of an SAP transaction: a model, a behaviour and a service, in that order.</p><div class="svc-tags"><span class="itag yes">RAP</span><span class="itag yes">CDS</span><span class="itag yes">ABAP</span></div><ul class="fn-list"><li>Managed and unmanaged business objects</li><li>Behaviour definitions and implementation classes</li><li>Determinations, validations and side effects</li><li>Actions, including static and factory actions</li><li>Draft handling that survives a closed laptop</li><li>Concurrency, ETags and locking</li><li>Authorisation in the behaviour, not in the screen</li><li>Unmanaged save with a legacy API underneath</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Service exposure</span></div><p class="sub-d">Publishing the object so a Fiori app, a portal or another system can use it.</p><div class="svc-tags"><span class="itag yes">RAP</span><span class="itag yes">CDS</span><span class="itag yes">FIORI</span></div><ul class="fn-list"><li>Service definitions and service bindings</li><li>OData V2 and V4 exposure from one model</li><li>Projection views and behaviour projections</li><li>Fiori Elements consumption from the annotations</li><li>Value help, search help and text associations</li><li>Versioning a published service without breaking it</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">CDS and Data Modelling</span><span class="m-meta">Core Data Services  ·  Annotations and UI metadata  ·  Analytical modelling</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Core Data Services</span></div><p class="sub-d">One description of the data that the service, the screen and the report all read.</p><div class="svc-tags"><span class="itag yes">CDS</span><span class="itag yes">HANA</span></div><ul class="fn-list"><li>Basic, composite and consumption view entities</li><li>Associations, compositions and to-parent paths</li><li>Access control in DCL, tested rather than assumed</li><li>Table functions where a view will not do</li><li>Extensibility — extend views without touching them</li><li>Replacing legacy views and joins with a modelled layer</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Annotations and UI metadata</span></div><p class="sub-d">The metadata that lets a screen be generated instead of hand-written.</p><div class="svc-tags"><span class="itag yes">CDS</span><span class="itag yes">FIORI</span></div><ul class="fn-list"><li>UI annotations — list, object page, facets and fields</li><li>Metadata extensions, kept out of the model</li><li>Search, filter and default sort behaviour</li><li>Value helps and text arrangement</li><li>Criticality, ratings and the small visual grammar</li><li>Draft and action annotations for Fiori Elements</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Analytical modelling</span></div><p class="sub-d">Reporting from the transactional model rather than from a copy of it.</p><div class="svc-tags"><span class="itag yes">CDS</span><span class="itag yes">HANA</span><span class="itag yes">AMDP</span></div><ul class="fn-list"><li>Analytical cube and query views</li><li>Dimensions, measures and restricted key figures</li><li>Embedded analytics and analytical list pages</li><li>Currency and unit conversion done properly</li><li>Performance of an analytical stack under real volume</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">SAP HANA and AMDP</span><span class="m-meta">AMDP  ·  HANA native development  ·  Database tuning</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">AMDP</span></div><p class="sub-d">ABAP Managed Database Procedures: the logic moved to where the rows already are.</p><div class="svc-tags"><span class="itag yes">AMDP</span><span class="itag yes">ABAP</span><span class="itag yes">HANA</span></div><ul class="fn-list"><li>AMDP classes and methods in SQLScript</li><li>Loops over millions of rows rewritten as set operations</li><li>AMDP table functions consumed by CDS</li><li>Debugging AMDP, and the traps in it</li><li>Transport, lifecycle and when AMDP is the wrong answer</li><li>Measured push-down: the runtime before, and after</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">HANA native development</span></div><p class="sub-d">Modelling and deployment in HANA itself, for the parts that belong there.</p><div class="svc-tags"><span class="itag yes">HANA</span></div><ul class="fn-list"><li>Calculation views — dimension, cube and star join</li><li>SQLScript procedures and functions</li><li>HDI containers, roles and cross-container access</li><li>Deployment through MTA, not through a screen</li><li>Data provisioning and virtual tables</li><li>Migration of classic views into a supported model</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Database tuning</span></div><p class="sub-d">Why it is slow, in evidence rather than in folklore.</p><div class="svc-tags"><span class="itag yes">HANA</span><span class="itag yes">ABAP</span></div><ul class="fn-list"><li>Execution-plan analysis and the plan cache</li><li>Indexes, partitioning and table placement</li><li>Memory, delta merge and column-store behaviour</li><li>Expensive-statement tracing tied back to the ABAP that caused it</li><li>Sizing before a go-live rather than after it</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">SAP Fiori and UI5</span><span class="m-meta">Fiori Elements  ·  Freestyle SAPUI5  ·  Launchpad, roles and theming</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Fiori Elements</span></div><p class="sub-d">Apps the annotations build, so the next change is a model change and not a sprint.</p><div class="svc-tags"><span class="itag yes">FIORI</span><span class="itag yes">CDS</span><span class="itag yes">RAP</span></div><ul class="fn-list"><li>List report and object page</li><li>Overview pages and analytical list pages</li><li>Flexible programming model where a plain template stops</li><li>Custom sections, columns and actions, added properly</li><li>Draft-enabled create and edit flows</li><li>Adaptation and variant management for the end user</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Freestyle SAPUI5</span></div><p class="sub-d">When the screen genuinely is not a list and a form.</p><div class="svc-tags"><span class="itag yes">FIORI</span></div><ul class="fn-list"><li>MVC applications with routing and targets</li><li>Custom controls where the library has none</li><li>OData V2 and V4 models, batching and expands</li><li>i18n and right-to-left readiness</li><li>Fragment-based dialogs and reusable components</li><li>Unit and OPA5 tests around the parts that matter</li><li>Accessibility and keyboard behaviour</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Launchpad, roles and theming</span></div><p class="sub-d">Getting the app in front of the right person, looking like it belongs.</p><div class="svc-tags"><span class="itag yes">FIORI</span><span class="itag yes">BTP</span><span class="itag yes">ABAP</span></div><ul class="fn-list"><li>Fiori launchpad on-stack: catalogues, groups, spaces and pages</li><li>SAP Build Work Zone on BTP</li><li>Tiles, target mappings and intent navigation</li><li>Business roles and catalogue assignment</li><li>Theming with the UI Theme Designer</li><li>App descriptor, deployment and cache behaviour</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">SAP BTP Engineering</span><span class="m-meta">Account and runtime setup  ·  Identity and authorisation  ·  Integration  ·  Multitenant SaaS</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Account and runtime setup</span></div><p class="sub-d">The platform groundwork that decides how painful the next two years are.</p><div class="svc-tags"><span class="itag yes">BTP</span></div><ul class="fn-list"><li>Global account, directories and subaccount layout</li><li>Entitlements, quotas and what they will cost</li><li>Cloud Foundry spaces, orgs and service instances</li><li>Transport between subaccounts with TMS or CI/CD</li><li>Environment separation — dev, test and production</li><li>Logging, alerting and health checks</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Identity and authorisation</span></div><p class="sub-d">Who a user is, what they may see, and how the core finds out.</p><div class="svc-tags"><span class="itag yes">BTP</span></div><ul class="fn-list"><li>XSUAA scopes, role templates and role collections</li><li>Identity Authentication and Identity Provisioning</li><li>Corporate IdP federation and single sign-on</li><li>Principal propagation to the on-premise system</li><li>Destinations and the Cloud Connector</li><li>Authorisation checks that fail closed, and are tested</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Integration</span></div><p class="sub-d">Between systems, where most projects actually break.</p><div class="svc-tags"><span class="itag yes">BTP</span><span class="itag yes">CAPM</span></div><ul class="fn-list"><li>Integration Suite iFlows and mappings</li><li>API Management — policies, plans and consumers</li><li>Event Mesh, queues and asynchronous processing</li><li>Idempotency, retries and poison messages</li><li>File, SFTP and third-party API interfaces</li><li>Monitoring an interface after it goes live</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Multitenant SaaS</span></div><p class="sub-d">Running an application for many customers on one deployment. We do this for our own product.</p><div class="svc-tags"><span class="itag yes">BTP</span><span class="itag yes">CAPM</span><span class="itag yes">HANA</span></div><ul class="fn-list"><li>MTX / MTXS subscription and the SaaS registry</li><li>A HANA container per tenant, with tenant-scoped reads</li><li>Tenant onboarding, upgrade and offboarding</li><li>Schema upgrades across subscribed tenants</li><li>Per-tenant configuration without a per-tenant branch</li><li>Metering, limits and the cost model underneath</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">CAPM — Cloud Application Programming</span><span class="m-meta">Service modelling  ·  Custom logic and integration  ·  Build and deployment</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Service modelling</span></div><p class="sub-d">The domain first, and the service as a projection of it.</p><div class="svc-tags"><span class="itag yes">CAPM</span><span class="itag yes">CDS</span></div><ul class="fn-list"><li>Domain models and reusable aspects in CDS</li><li>Service definitions, projections and drafts</li><li>Input validation and business rules in handlers</li><li>Localised texts and value help</li><li>Authorisation with @requires and @restrict</li><li>Test data, and tests that run without a cloud</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Custom logic and integration</span></div><p class="sub-d">Node.js where the framework stops.</p><div class="svc-tags"><span class="itag yes">CAPM</span></div><ul class="fn-list"><li>Before, on and after handlers, kept thin</li><li>Remote services to S/4HANA and third parties</li><li>Messaging and background jobs</li><li>File handling, attachments and object store</li><li>Scheduled work and long-running tasks</li><li>Structured logging and error contracts</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Build and deployment</span></div><p class="sub-d">From a laptop to a productive subaccount, repeatably.</p><div class="svc-tags"><span class="itag yes">CAPM</span><span class="itag yes">HANA</span><span class="itag yes">BTP</span></div><ul class="fn-list"><li>MTA build and deployment</li><li>HDI deployment and schema evolution</li><li>Approuter, HTML5 repository and app routing</li><li>Environment configuration through mtaext</li><li>Zero-surprise upgrades: what changes, and when it does not</li><li>A pipeline anyone on the team can run</li></ul></div>
+</div></div>
+<div class="mcard open">
+<div class="mcard-head"><span class="m-idx" aria-hidden="true">&#9670;</span><span class="m-body"><span class="m-name">Delivery, Data and Support</span><span class="m-meta">Data migration  ·  Support and managed services  ·  Advisory and enablement</span></span></div>
+<div class="mcard-subs">
+<div class="sub"><div class="sub-head"><span class="sub-name">Data migration</span></div><p class="sub-d">Moving the old data across, with the evidence that it arrived intact.</p><div class="svc-tags"><span class="itag yes">ABAP</span><span class="itag yes">CAPM</span><span class="itag yes">HANA</span></div><ul class="fn-list"><li>Object catalogue in dependency order</li><li>Extraction and cleansing from the legacy system</li><li>Value mapping from legacy codes to platform values</li><li>Dry runs through the real service handlers, then rolled back</li><li>Reconciliation counts and a variance report</li><li>A permanent crosswalk from every legacy id</li><li>A reversible load, because the first one is never the last</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Support and managed services</span></div><p class="sub-d">Keeping what is running, running — including what somebody else built.</p><div class="svc-tags"><span class="itag yes">ABAP</span><span class="itag yes">FIORI</span><span class="itag yes">BTP</span><span class="itag yes">CAPM</span></div><ul class="fn-list"><li>Incident handling against an agreed response time</li><li>Small changes and enhancements out of a backlog</li><li>Upgrade and support-pack regression testing</li><li>Monitoring, alerting and the housekeeping nobody schedules</li><li>Taking over an undocumented system, and documenting it</li><li>Escalation to SAP with the trace attached</li></ul></div>
+<div class="sub"><div class="sub-head"><span class="sub-name">Advisory and enablement</span></div><p class="sub-d">Answering a specific question, or teaching your team to answer it themselves.</p><div class="svc-tags"><span class="itag yes">ABAP</span><span class="itag yes">RAP</span><span class="itag yes">BTP</span><span class="itag yes">FIORI</span></div><ul class="fn-list"><li>Custom-code readiness and remediation planning</li><li>Extension strategy: in the core, or beside it</li><li>Architecture review of something already half-built</li><li>Hands-on training in RAP, CAP, CDS and Fiori</li><li>Coding standards, review practice and a definition of done</li><li>A written document at the end, either way</li></ul></div>
+</div></div>
+</div>
+  </div>
+</section>
+
+<!-- ============================ PRODUCTS ============================
+     UniverseIT's entry is checked against this repository. The other four
+     are described from their stated scope: the "Stage" fact on each is left
+     as a fill-me deliberately rather than claimed. -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Products</div>
+      <h2>Five products of our own — which is why the services above are not a list of words.</h2>
+      <p class="lede">
+        A services firm can describe RAP. A firm that ships a multi-tenant SaaS on BTP has had to
+        subscribe a tenant, upgrade its schema, and explain an incident. <strong>These are ours</strong> —
+        built, licensed and supported by us.
+      </p>
+    </div>
+
+    <div class="prods">
+
+      <article class="prod rv">
+        <div class="prod-main">
+          <div class="prod-kick">Product 01 · In production</div>
+          <h3 class="prod-name">Universe<span class="it">IT</span></h3>
+          <div class="prod-line">Institutional ERP for schools, colleges and universities.</div>
+          <p class="prod-body">
+            A multi-tenant ERP on SAP BTP, built around the society or trust that actually owns an Indian
+            campus. Each subscribing institution is deployed into its own HANA container, and every read
+            is scoped again by campus. It runs the whole institution — admission to alumni, enquiry to
+            statutory return — with a mobile app for staff, students and parents.
+          </p>
+          <ul class="fn-list">
+            <li>Trust, campus, department, year, course, section, student — one enforced hierarchy</li>
+            <li>Admissions from enquiry to admitted student, with quotas and document checklists</li>
+            <li>Fees, payroll, donations and club spend posting real double-entry vouchers</li>
+            <li>Examinations, question-grain outcome attainment and accreditation data points</li>
+            <li>Timetable, attendance, promotion and the academic calendar</li>
+            <li>Transport by route and stop, hostel by bed, inventory, library and infirmary</li>
+            <li>Payroll to the statutory file — both tax regimes, PF ECR, ESI, Form 24Q and 16</li>
+            <li>A migration cockpit that dry-runs a legacy load through the real service handlers</li>
+          </ul>
+          <div class="prod-cta">
+            <a class="btn btn-solid" href="https://universeit.co.in" target="_blank" rel="noopener">Open the UniverseIT site ↗</a>
+            <a class="btn btn-line" href="#enquire" data-open-demo>Ask for a demo</a>
+          </div>
+        </div>
+        <div class="prod-side">
+          <div class="prod-fact"><div class="f-k">Platform</div><div class="f-v">SAP BTP · Cloud Foundry · HANA Cloud</div></div>
+          <div class="prod-fact"><div class="f-k">Built with</div><div class="f-v soft">
+            <span class="chip">CAP</span><span class="chip">CDS</span><span class="chip">SAPUI5 / Fiori</span><span class="chip">Node.js</span><span class="chip">MTXS</span><span class="chip">React Native</span>
+          </div></div>
+          <div class="prod-fact"><div class="f-k">For</div><div class="f-v soft">Societies and trusts running one campus or seven — schools, degree colleges, universities, coaching and vocational institutes.</div></div>
+          <div class="prod-fact"><div class="f-k">Stage</div><div class="f-v">In production, multi-tenant</div></div>
+        </div>
+      </article>
+
+      <article class="prod rv">
+        <div class="prod-main">
+          <div class="prod-kick">Product 02</div>
+          <h3 class="prod-name">Profic<span class="it">IT</span></h3>
+          <!-- UIT-WHY 2026-09-29: the ProficIT card described procure-to-pay only, but the product is a set of process legs.
+                 Cause:  the card was written when P2P was the only leg; the launchpad has since grown seven.
+                 Change: state the seven sub-groups, keep the P2P detail as the lead, and claim no stage or "in production".
+                 Chosen: option A (expand this card only) — Jagadeesh.
+                 Revert risk: the site under-describes ProficIT again, and no longer matches docs/PRODUCTS.md. -->
+          <div class="prod-line">Your business processes, on SAP.</div>
+          <p class="prod-body">
+            ProficIT is one application organised by business process rather than six transactions and a
+            spreadsheet in the middle. It starts from procure to pay, with SAP as the system of record
+            underneath and a Fiori surface a buyer will actually use, and extends across seven processes.
+          </p>
+          <ul class="fn-list">
+            <li><strong>Accountant</strong> (record to report) — vouchers, bank reconciliation and financial statements</li>
+            <li><strong>Hire to retire</strong> — recruitment, offers, leave, attendance, payroll, appraisals, training and expenses</li>
+            <li><strong>Procure to pay</strong> — requisition, RFQ and comparison, order, goods receipt, invoice and three-way match, vendor onboarding</li>
+            <li><strong>Order to cash</strong> — customer master and a sales desk that posts revenue</li>
+            <li><strong>Plan to produce</strong> — production master, work orders and job work</li>
+            <li><strong>Assets, equipment &amp; maintenance</strong> — asset register, verification and planned maintenance</li>
+            <li><strong>Quality management</strong> — non-conformance, corrective and preventive action, calibration</li>
+            <li>Approvals at every hop — multi-level, delegated, escalated, audited</li>
+          </ul>
+          <div class="prod-cta">
+            <a class="btn btn-line" href="#enquire" data-open-demo>Ask about ProficIT</a>
+          </div>
+        </div>
+        <div class="prod-side">
+          <div class="prod-fact"><div class="f-k">Platform</div><div class="f-v">SAP · Fiori</div></div>
+          <div class="prod-fact"><div class="f-k">Built with</div><div class="f-v soft">
+            <span class="chip">RAP</span><span class="chip">CDS</span><span class="chip">Fiori Elements</span><span class="chip">ABAP</span>
+          </div></div>
+          <div class="prod-fact"><div class="f-k">For</div><div class="f-v soft">Purchasing, stores, accounts, HR, sales, production, maintenance and quality in an SAP-run business.</div></div>
+          <div class="prod-fact"><div class="f-k">Stage</div><div class="f-v"><span class="fillme">stage</span></div></div>
+        </div>
+      </article>
+
+      <article class="prod rv">
+        <div class="prod-main">
+          <div class="prod-kick">Product 03</div>
+          <h3 class="prod-name">Dyn<span class="it">Appro</span></h3>
+          <div class="prod-line">Dynamic approval flow manager — any context, any depth.</div>
+          <p class="prod-body">
+            Every application grows its own approval logic, badly, in handler code. DynAppro takes it out:
+            the flow is data, so a new approval point is configured rather than coded. Multi-level and
+            multi-person by design — serial, parallel, or an either-of-these gate — over any object in
+            any application that can call it.
+          </p>
+          <ul class="fn-list">
+            <li>An approval point per business object, catalogued and switchable</li>
+            <li>Levels in series, approvers in parallel, and AND / OR gates between them</li>
+            <li>Approver chosen by named person, by role, by reporting line or by threshold</li>
+            <li>Delegation, out-of-office and stand-in, without breaking the trail</li>
+            <li>Escalation and reminders when a step goes quiet</li>
+            <li>Recall by the raiser, and two reject policies — back a step, or back to the start</li>
+            <li>A full audit trail: who was asked, who saw it, what they did and when</li>
+            <li>Embeddable — the flow engine serves any app, not just its own screens</li>
+          </ul>
+          <div class="prod-cta">
+            <a class="btn btn-line" href="#enquire" data-open-demo>Ask about DynAppro</a>
+          </div>
+        </div>
+        <div class="prod-side">
+          <div class="prod-fact"><div class="f-k">Platform</div><div class="f-v">SAP BTP · embeddable service</div></div>
+          <div class="prod-fact"><div class="f-k">Shape</div><div class="f-v soft">A configured engine plus an inbox — no code change to add an approval point.</div></div>
+          <div class="prod-fact"><div class="f-k">For</div><div class="f-v soft">Any application whose approvals are multi-level, multi-person, and always changing.</div></div>
+          <div class="prod-fact"><div class="f-k">Stage</div><div class="f-v"><span class="fillme">stage</span></div></div>
+        </div>
+      </article>
+
+      <article class="prod rv">
+        <div class="prod-main">
+          <div class="prod-kick">Product 04</div>
+          <h3 class="prod-name">Buil<span class="it">Dyn</span></h3>
+          <div class="prod-line">No-code apps, from a form or from JSON.</div>
+          <p class="prod-body">
+            Describe the thing you want to keep track of — its fields, its rules, who may see it — in a
+            form editor or straight in JSON, and BuilDyn renders the application. The definition is a
+            document you can read, diff and keep in version control, so a no-code app does not become a
+            black box nobody can audit.
+          </p>
+          <ul class="fn-list">
+            <li>Entities, fields and relationships defined in a form or authored as JSON</li>
+            <li>List, object and create screens generated from the definition</li>
+            <li>Validation, defaults and value help declared rather than coded</li>
+            <li>Roles and field-level authorisation per app</li>
+            <li>Approvals wired straight to DynAppro when a flow is needed</li>
+            <li>Published without a deployment cycle; versioned, and reversible</li>
+            <li>The definition exports as JSON — readable, diffable, kept in Git</li>
+          </ul>
+          <div class="prod-cta">
+            <a class="btn btn-line" href="#enquire" data-open-demo>Ask about BuilDyn</a>
+          </div>
+        </div>
+        <div class="prod-side">
+          <div class="prod-fact"><div class="f-k">Platform</div><div class="f-v">Browser · JSON definition</div></div>
+          <div class="prod-fact"><div class="f-k">Shape</div><div class="f-v soft">A form-based editor over a JSON app definition, rendered at runtime.</div></div>
+          <div class="prod-fact"><div class="f-k">For</div><div class="f-v soft">The administrator or analyst who knows the process and should not have to wait for a release.</div></div>
+          <div class="prod-fact"><div class="f-k">Stage</div><div class="f-v"><span class="fillme">stage</span></div></div>
+        </div>
+      </article>
+
+      <article class="prod rv">
+        <div class="prod-main">
+          <div class="prod-kick">Product 05 · Android &amp; iOS</div>
+          <h3 class="prod-name">Kirik<span class="it">IT</span></h3>
+          <div class="prod-line">Gully cricket, scored properly.</div>
+          <p class="prod-body">
+            The street game keeps its score on a phone anyway — usually in a notes app, argued over by
+            the end of the second innings. KirikIT scores it ball by ball, works when the signal does
+            not, and remembers who actually won last Sunday.
+          </p>
+          <ul class="fn-list">
+            <li>Ball-by-ball scoring, quick enough to keep up with the game</li>
+            <li>Teams, players and a tournament that runs across weekends</li>
+            <li>The local rules your street plays, not only the ones in the book</li>
+            <li>Offline first — the score is kept on the phone and syncs later</li>
+            <li>A live scoreboard to share with whoever could not come</li>
+            <li>Batting and bowling figures that carry across matches</li>
+            <li>A season table, so the argument has an answer</li>
+          </ul>
+          <div class="prod-cta">
+            <a class="btn btn-line" href="#enquire" data-open-demo>Ask about KirikIT</a>
+          </div>
+        </div>
+        <div class="prod-side">
+          <div class="prod-fact"><div class="f-k">Platform</div><div class="f-v">Android · iOS</div></div>
+          <div class="prod-fact"><div class="f-k">Shape</div><div class="f-v soft">A phone app for the person keeping score, and a shareable board for everyone else.</div></div>
+          <div class="prod-fact"><div class="f-k">For</div><div class="f-v soft">Street, society and corporate-ground cricket — the games nobody else bothers to record.</div></div>
+          <div class="prod-fact"><div class="f-k">Stage</div><div class="f-v"><span class="fillme">stage</span></div></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARTNERSHIP ============================ -->
+<section id="partnership" class="band-ink">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow on-ink">Partnership</div>
+      <h2>We are partners to SAP.</h2>
+      <p class="lede">
+        Which is a commercial fact with a technical consequence: we build inside the platform's own
+        extension model, on entitlements we hold ourselves, with a support path that ends at SAP rather
+        than at us shrugging.
+      </p>
+    </div>
+
+    <div class="partner-grid">
+      <div class="partner-body rv">
+        <p>
+          <strong>Partnership means we are answerable for the platform, not only for our code.</strong>
+          Licences, entitlements and a support route can be arranged through us, and a problem that turns
+          out to be SAP's is raised as SAP's — with the incident, the trace and the reproduction attached,
+          because we can read them.
+        </p>
+        <p>
+          It also means we build the way SAP intends the platform to be built. Extensions sit outside the
+          core on released APIs and side-by-side services on BTP. Nothing we deliver should make your next
+          upgrade harder than the one before it, and where a shortcut would, we will say so before we
+          quote it.
+        </p>
+        <p>
+          And it is what lets a firm our size run a multi-tenant SaaS: UniverseIT lives on our own BTP
+          subaccounts, with HANA Cloud, XSUAA, the Integration Suite and MTXS underneath — the same
+          entitlements, the same limits and the same upgrade windows your landscape has.
+        </p>
+        <p class="tm-note">
+          SAP, SAP S/4HANA, SAP Fiori, SAP HANA, SAP BTP and other SAP products and services named here
+          are trademarks or registered trademarks of SAP SE in Germany and other countries. SAPTECHS is
+          an independent company; nothing on this page is a statement by SAP SE.
+        </p>
+      </div>
+
+      <div class="partner-mark rv">
+        <div class="pm-k">Partner of record</div>
+        <div class="pm-v">SAPTECHS Private Limited</div>
+        <dl>
+          <dt>Partner ID</dt><dd><span class="fillme">SAP partner id</span></dd>
+          <dt>Programme</dt><dd><span class="fillme">partner programme &amp; level</span></dd>
+          <dt>Since</dt><dd><span class="fillme">year</span></dd>
+          <dt>Focus</dt><dd>SAP BTP · S/4HANA extensibility · Fiori · HANA</dd>
+          <dt>Own SaaS</dt><dd>UniverseIT, multi-tenant on SAP BTP</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ENGAGEMENT ============================ -->
+<section id="engagement">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Engagement</div>
+      <h2>Four ways to work with us, and we will tell you which one you actually need.</h2>
+      <p class="lede">
+        Most enquiries arrive shaped as one thing and turn out to be another. A "small Fiori app" is
+        usually a data-model question; a "performance problem" is usually a loop that should have been
+        a push-down. We will say which, before the estimate.
+      </p>
+    </div>
+    <div class="rules rv">
+      <div class="rule-item">
+        <div class="r-m">01</div>
+        <div>
+          <h3>Fixed-scope build</h3>
+          <p>A defined thing, built and handed over: a RAP application, a set of Fiori apps, a CAP service on BTP, an interface. You get the design written down before the code, the code in your repository, and a hand-over that assumes we might not be here in three years. <em>Priced on the scope, not on the seat.</em></p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-m">02</div>
+        <div>
+          <h3>Team extension</h3>
+          <p>Our developers inside your delivery, your standards, your board. Useful when you have the direction and not the hands, or when the ABAP and the BTP halves of a programme need people who have done both. <em>Named people, not a bench.</em></p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-m">03</div>
+        <div>
+          <h3>Managed support</h3>
+          <p>We keep what is running, running: incidents, small changes, upgrade regression, monitoring and the annual platform housekeeping nobody schedules. Applies to what we built and to what somebody else built and left. <em>A response time you can hold us to.</em></p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-m">04</div>
+        <div>
+          <h3>Product licence and rollout</h3>
+          <p>UniverseIT, ProficIT, DynAppro or BuilDyn licensed and rolled out — configuration, data migration, integration into the systems you keep, training, and support afterwards. <em>The product is ours, so an unmet requirement can become a release rather than a workaround.</em></p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="r-m">05</div>
+        <div>
+          <h3>Assessment</h3>
+          <p>A short, paid look at a specific question — custom-code readiness for S/4, why a report takes nine minutes, whether an extension belongs in the core or beside it — ending in a document you can act on with or without us. <em>No obligation to hire us afterwards.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="seal-rule">
+
+<!-- ============================ DIFFERENCE ============================ -->
+<section id="difference" class="band-ink">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow on-ink">Difference</div>
+      <h2>Why a small firm, and why this one.</h2>
+      <p class="lede">
+        Being small is only an advantage if it buys you something. Here is what it buys.
+      </p>
+    </div>
+    <div class="diffs" id="diffGrid"></div>
+  </div>
+</section>
+
+<!-- ============================ ENQUIRE ============================ -->
+<section id="enquire" class="band-sunken">
+  <div class="wrap">
+    <div class="sec-head rv" style="max-width:820px">
+      <div class="eyebrow">Enquire</div>
+      <h2>Bring the problem you have been told is not worth fixing.</h2>
+      <p class="lede">
+        Name the thing — the report nobody will touch, the approval matrix that lives in a spreadsheet,
+        the upgrade you have postponed twice — and we will tell you what it would take, including when
+        the answer is that you should not do it.
+      </p>
+    </div>
+
+    <div class="demo-hold rv">
+      <button class="btn btn-solid demo-open" type="button" id="demoReveal" data-open-demo>
+        Start an enquiry
+      </button>
+      <div id="demoPanel" hidden>
+        <form id="demoForm" novalidate>
+          <div class="form-row">
+            <div class="field" id="f-name">
+              <label for="d-name">Your name <span class="req">*</span></label>
+              <input id="d-name" name="name" type="text" autocomplete="name" placeholder="Who should we ask for?">
+              <span class="err">Please tell us who you are.</span>
+            </div>
+            <div class="field" id="f-inst">
+              <label for="d-inst">Organisation <span class="req">*</span></label>
+              <input id="d-inst" name="institution" type="text" autocomplete="organization" placeholder="Company, group or institution">
+              <span class="err">Please name your organisation.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="d-type">What is this about?</label>
+              <select id="d-type" name="kind">
+                <option>A build — new development on SAP</option>
+                <option>An existing system that needs work</option>
+                <option>Support for what is already running</option>
+                <option>One of your products</option>
+                <option>Team extension</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="d-role">Your role</label>
+              <select id="d-role" name="role">
+                <option>Head of IT or CIO</option>
+                <option>SAP lead or architect</option>
+                <option>Programme or project manager</option>
+                <option>Business owner — finance, procurement, operations</option>
+                <option>Founder or director</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field" id="f-email">
+              <label for="d-email">Email <span class="req">*</span></label>
+              <input id="d-email" name="email" type="email" autocomplete="email" placeholder="name@company.com">
+              <span class="err">We need an address that will reach you.</span>
+            </div>
+            <div class="field">
+              <label for="d-phone">Mobile</label>
+              <input id="d-phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional, but faster">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>What should we talk about?</label>
+            <div class="want" id="demoWant" role="group" aria-label="What the enquiry is about"></div>
+          </div>
+
+          <div class="field hp" aria-hidden="true">
+            <label for="d-company">Company</label>
+            <input id="d-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="d-msg">The problem, in your own words</label>
+            <textarea id="d-msg" name="message" placeholder="The report nobody will touch, the interface that breaks every quarter, the approval matrix in a spreadsheet."></textarea>
+          </div>
+
+          <div class="form-foot">
+            <button class="btn btn-solid" type="submit">Send the enquiry</button>
+            <p class="form-note" id="demoNote"></p>
+          </div>
+        </form>
+
+        <div class="sent" id="demoSent" hidden>
+          <h3 id="sentTitle">That is everything we need</h3>
+          <p id="sentLead"></p>
+          <pre id="sentBody"></pre>
+          <div class="form-foot">
+            <button class="btn btn-solid" type="button" id="demoCopy">Copy this enquiry</button>
+            <a class="btn btn-line" id="demoMail" href="#">Open in your mail app</a>
+            <button class="btn btn-line" type="button" id="demoAgain">Start again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section id="contact" class="band-ink">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow on-ink">Contact</div>
+      <h2>SAPTECHS Private Limited</h2>
+      <p class="lede">
+        Write to us about a build, a system that needs looking after, or one of our products. An
+        enquiry with a real problem in it gets a real answer, usually the same working day.
+      </p>
+    </div>
+    <div class="co-grid rv">
+      <div class="co-item">
+        <div class="co-k">Email</div>
+        <a class="co-v mail" id="coEmail" href="mailto:contact@saptechs.co.in">contact@saptechs.co.in</a>
+        <!-- UIT-WHY 2026-10-06: the GoDaddy site had a Careers page; this page said nothing about hiring.
+             Cause:  the page was written as a services and products sheet only.
+             Change: one line inviting CVs to the contact address; old /careers now forwards to #contact.
+             Chosen: an email line over a fifth contact card (odd cell in the grid) or an upload form
+                     (the page has no backend) — Jagadeesh.
+             Revert risk: /careers forwards here and finds no mention of applying. -->
+        <p class="co-s">Enquiries and everything else land here. Looking for a role? Send your CV here too.</p>
+      </div>
+      <div class="co-item">
+        <div class="co-k">UniverseIT</div>
+        <a class="co-v mail" href="mailto:just.universe.it@saptechs.co.in">just.universe.it@saptechs.co.in</a>
+        <p class="co-s">The product line has its own address, and its own site at
+          <a class="co-v mail" style="font-size:13px;font-weight:400" href="https://universeit.co.in" target="_blank" rel="noopener">universeit.co.in</a>.</p>
+      </div>
+      <div class="co-item">
+        <div class="co-k">Phone</div>
+        <a class="co-v tel" href="tel:+918497877767">+91-84 97 87 77 67</a>
+        <p class="co-s">Monday to Saturday, during working hours.</p>
+      </div>
+      <div class="co-item">
+        <div class="co-k">Office</div>
+        <div class="co-v">1st Cross, 5th Main, Sarvabhouma Nagar,<br>Chikkalasandra, Bengaluru - 560061</div>
+        <p class="co-s">SAPTECHS Private Limited.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <span>SAPTECHS — SAP technical solutions, and products built on them</span>
+    <span><a class="mail-link" style="color:var(--ink-accent);border-bottom-color:rgba(242,164,19,.35)" href="mailto:contact@saptechs.co.in">contact@saptechs.co.in</a></span>
+    <span>SAP is a trademark of SAP SE</span>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+/* ================= THEME ================= */
+(function () {
+  var root = document.documentElement, btn = document.getElementById("themeBtn");
+  var stored = null;
+  try { stored = localStorage.getItem("sts-theme"); } catch (e) {}
+  if (stored === "dark" || stored === "light") root.setAttribute("data-theme", stored);
+  btn.addEventListener("click", function () {
+    var isDark = root.getAttribute("data-theme") === "dark" ||
+      (!root.hasAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = isDark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("sts-theme", next); } catch (e) {}
+  });
+})();
+
+/* ================= THE STACK ================= */
+var STACK = [
+  { name: "SAP Fiori / UI5", meta: "what the user touches",
+    body: "Fiori Elements where annotations can carry the screen, freestyle SAPUI5 where they cannot, and the launchpad that decides which of the two a person ever sees. Designed for the role, not for the table.",
+    carries: ["Fiori Elements", "SAPUI5", "Launchpad", "Work Zone", "Annotations", "Theme Designer"] },
+  { name: "RAP", meta: "the business object",
+    body: "ABAP RESTful Application Programming: a behaviour definition with determinations, validations and actions, drafts that survive a closed laptop, and a service binding that publishes it as OData without a line of plumbing.",
+    carries: ["Behaviour definitions", "Managed & unmanaged BOs", "Draft handling", "Actions", "Service binding"] },
+  { name: "CAP", meta: "the same idea, off-stack",
+    body: "The Cloud Application Programming Model, for what belongs beside the core rather than inside it. Domain models in CDS, handlers in Node.js, multitenancy through MTXS — and the same model deploys to HANA Cloud and to a laptop.",
+    carries: ["CDS models", "Node.js handlers", "MTXS", "Approuter", "MTA build", "HDI deploy"] },
+  { name: "CDS", meta: "one model, read everywhere",
+    body: "Core Data Services as the single description of the data — basic, composite and consumption views, associations that survive the join, access control in DCL, and the UI annotations that let a screen be generated rather than hand-built.",
+    carries: ["View entities", "Associations", "DCL", "Metadata extensions", "Analytical views"] },
+  { name: "ABAP", meta: "the core, still",
+    body: "The language most of your business logic is still written in. We work it in both dialects: classic ABAP where the system is where it is, and ABAP Cloud where the core has to stay clean.",
+    carries: ["ABAP OO", "BAdIs & enhancements", "IDoc & RFC", "Batch", "ATC", "Custom code remediation"] },
+  { name: "AMDP", meta: "logic where the data is",
+    body: "ABAP Managed Database Procedures: the loop that reads a million rows one at a time, rewritten as one statement the database runs itself. Written in ABAP, executed in HANA, debugged like ABAP.",
+    carries: ["AMDP classes", "SQLScript", "Table functions", "Push-down", "Plan analysis"] },
+  { name: "SAP HANA", meta: "the ground floor",
+    body: "Calculation views, table functions and SQLScript in HDI containers, plus the tuning work underneath everything above: what to push down, what to partition, and which index the optimiser is ignoring and why.",
+    carries: ["HANA Cloud", "HDI containers", "Calculation views", "SQLScript", "Partitioning", "Tuning"] },
+  { name: "SAP BTP", meta: "where it all runs",
+    body: "The platform the side-by-side half lives on: subaccounts and Cloud Foundry spaces, XSUAA and IAS for identity, destinations and connectivity back to the core, Integration Suite and Event Mesh between systems, and the transport that moves all of it.",
+    carries: ["Cloud Foundry", "XSUAA", "IAS / IPS", "Destinations", "Integration Suite", "Event Mesh", "TMS"] }
+];
+
+(function () {
+  var list = document.getElementById("spineList"), panel = document.getElementById("spinePanel"), idx = 0;
+  STACK.forEach(function (h, i) {
+    var li = document.createElement("li");
+    var b = document.createElement("button");
+    b.className = "node"; b.type = "button"; b.setAttribute("role", "tab");
+    b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+    b.innerHTML = '<div class="n-name"></div><div class="n-meta"></div>';
+    b.querySelector(".n-name").textContent = h.name;
+    b.querySelector(".n-meta").textContent = h.meta;
+    b.addEventListener("click", function () { select(i, true); });
+    li.appendChild(b); list.appendChild(li);
+  });
+  var nodes = list.querySelectorAll(".node");
+  var stopped = false;
+  function select(i, manual) {
+    if (manual) stopped = true;
+    idx = i;
+    nodes.forEach(function (n, j) { n.setAttribute("aria-selected", j === i ? "true" : "false"); });
+    var h = STACK[i];
+    panel.innerHTML = '<h3></h3><p></p><div class="carries"></div>';
+    panel.querySelector("h3").textContent = h.name;
+    panel.querySelector("p").textContent = h.body;
+    var c = panel.querySelector(".carries");
+    h.carries.forEach(function (x) {
+      var s = document.createElement("span"); s.className = "chip"; s.textContent = x; c.appendChild(s);
+    });
+  }
+  select(0, false);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setInterval(function () { if (!stopped) select((idx + 1) % STACK.length, false); }, 3800);
+  }
+})();
+
+/* ================= SERVICE CATALOGUE ================= */
+var TECH = [
+  { k: "ABAP",  n: "ABAP",  d: "Classic and ABAP Cloud development on the core" },
+  { k: "FIORI", n: "Fiori", d: "Fiori, SAPUI5 and the launchpad" },
+  { k: "BTP",   n: "BTP",   d: "SAP Business Technology Platform" },
+  { k: "CAPM",  n: "CAPM",  d: "Cloud Application Programming Model" },
+  { k: "RAP",   n: "RAP",   d: "ABAP RESTful Application Programming Model" },
+  { k: "CDS",   n: "CDS",   d: "Core Data Services modelling" },
+  { k: "HANA",  n: "HANA",  d: "SAP HANA modelling, deployment and tuning" },
+  { k: "AMDP",  n: "AMDP",  d: "ABAP Managed Database Procedures" }
+];
+
+var SERVICES = [
+{ n:"ABAP Development", sub:[
+  { n:"Core ABAP engineering", c:["ABAP"],
+    d:"The everyday work of the core: the programs, the interfaces and the jobs the business runs on.",
+    f:["Reports, ALV and selection screens","Object-oriented ABAP — classes, interfaces, exceptions","Function modules, BAPIs and RFC","IDoc extensions, custom IDocs and processing","File and API interfaces, inbound and outbound","Background jobs, job chains and error handling","Forms — SmartForms, Adobe Forms and SAPscript maintenance","Data loads — BDC, LSMW and their modern replacements"] },
+  { n:"Enhancements and clean core", c:["ABAP","RAP"],
+    d:"Changing standard behaviour without changing standard objects, so the next upgrade stays an upgrade.",
+    f:["BAdIs, enhancement spots and implicit enhancements","Key-user extensibility, and when to refuse it","ABAP Cloud with released APIs only","Custom-code impact analysis for an S/4HANA move","Remediation of code that will not survive the move","A written argument whenever a modification is the only way","Side-by-side alternatives on BTP where the core should stay untouched"] },
+  { n:"Performance and code quality", c:["ABAP","HANA"],
+    d:"The nine-minute report, and the reason nobody has fixed it yet.",
+    f:["ATC and Code Inspector runs, with the findings triaged","SQL trace, runtime analysis and where the time really goes","Nested loops and SELECTs inside them, pushed down","Internal-table work rewritten for HANA","Locking, commit and update-task review","Unit tests around what is about to be rewritten","A before-and-after measurement, not an opinion"] }
+]},
+
+{ n:"RAP — ABAP RESTful Application Programming", sub:[
+  { n:"Business objects", c:["RAP","CDS","ABAP"],
+    d:"The modern shape of an SAP transaction: a model, a behaviour and a service, in that order.",
+    f:["Managed and unmanaged business objects","Behaviour definitions and implementation classes","Determinations, validations and side effects","Actions, including static and factory actions","Draft handling that survives a closed laptop","Concurrency, ETags and locking","Authorisation in the behaviour, not in the screen","Unmanaged save with a legacy API underneath"] },
+  { n:"Service exposure", c:["RAP","CDS","FIORI"],
+    d:"Publishing the object so a Fiori app, a portal or another system can use it.",
+    f:["Service definitions and service bindings","OData V2 and V4 exposure from one model","Projection views and behaviour projections","Fiori Elements consumption from the annotations","Value help, search help and text associations","Versioning a published service without breaking it"] }
+]},
+
+{ n:"CDS and Data Modelling", sub:[
+  { n:"Core Data Services", c:["CDS","HANA"],
+    d:"One description of the data that the service, the screen and the report all read.",
+    f:["Basic, composite and consumption view entities","Associations, compositions and to-parent paths","Access control in DCL, tested rather than assumed","Table functions where a view will not do","Extensibility — extend views without touching them","Replacing legacy views and joins with a modelled layer"] },
+  { n:"Annotations and UI metadata", c:["CDS","FIORI"],
+    d:"The metadata that lets a screen be generated instead of hand-written.",
+    f:["UI annotations — list, object page, facets and fields","Metadata extensions, kept out of the model","Search, filter and default sort behaviour","Value helps and text arrangement","Criticality, ratings and the small visual grammar","Draft and action annotations for Fiori Elements"] },
+  { n:"Analytical modelling", c:["CDS","HANA","AMDP"],
+    d:"Reporting from the transactional model rather than from a copy of it.",
+    f:["Analytical cube and query views","Dimensions, measures and restricted key figures","Embedded analytics and analytical list pages","Currency and unit conversion done properly","Performance of an analytical stack under real volume"] }
+]},
+
+{ n:"SAP HANA and AMDP", sub:[
+  { n:"AMDP", c:["AMDP","ABAP","HANA"],
+    d:"ABAP Managed Database Procedures: the logic moved to where the rows already are.",
+    f:["AMDP classes and methods in SQLScript","Loops over millions of rows rewritten as set operations","AMDP table functions consumed by CDS","Debugging AMDP, and the traps in it","Transport, lifecycle and when AMDP is the wrong answer","Measured push-down: the runtime before, and after"] },
+  { n:"HANA native development", c:["HANA"],
+    d:"Modelling and deployment in HANA itself, for the parts that belong there.",
+    f:["Calculation views — dimension, cube and star join","SQLScript procedures and functions","HDI containers, roles and cross-container access","Deployment through MTA, not through a screen","Data provisioning and virtual tables","Migration of classic views into a supported model"] },
+  { n:"Database tuning", c:["HANA","ABAP"],
+    d:"Why it is slow, in evidence rather than in folklore.",
+    f:["Execution-plan analysis and the plan cache","Indexes, partitioning and table placement","Memory, delta merge and column-store behaviour","Expensive-statement tracing tied back to the ABAP that caused it","Sizing before a go-live rather than after it"] }
+]},
+
+{ n:"SAP Fiori and UI5", sub:[
+  { n:"Fiori Elements", c:["FIORI","CDS","RAP"],
+    d:"Apps the annotations build, so the next change is a model change and not a sprint.",
+    f:["List report and object page","Overview pages and analytical list pages","Flexible programming model where a plain template stops","Custom sections, columns and actions, added properly","Draft-enabled create and edit flows","Adaptation and variant management for the end user"] },
+  { n:"Freestyle SAPUI5", c:["FIORI"],
+    d:"When the screen genuinely is not a list and a form.",
+    f:["MVC applications with routing and targets","Custom controls where the library has none","OData V2 and V4 models, batching and expands","i18n and right-to-left readiness","Fragment-based dialogs and reusable components","Unit and OPA5 tests around the parts that matter","Accessibility and keyboard behaviour"] },
+  { n:"Launchpad, roles and theming", c:["FIORI","BTP","ABAP"],
+    d:"Getting the app in front of the right person, looking like it belongs.",
+    f:["Fiori launchpad on-stack: catalogues, groups, spaces and pages","SAP Build Work Zone on BTP","Tiles, target mappings and intent navigation","Business roles and catalogue assignment","Theming with the UI Theme Designer","App descriptor, deployment and cache behaviour"] }
+]},
+
+{ n:"SAP BTP Engineering", sub:[
+  { n:"Account and runtime setup", c:["BTP"],
+    d:"The platform groundwork that decides how painful the next two years are.",
+    f:["Global account, directories and subaccount layout","Entitlements, quotas and what they will cost","Cloud Foundry spaces, orgs and service instances","Transport between subaccounts with TMS or CI/CD","Environment separation — dev, test and production","Logging, alerting and health checks"] },
+  { n:"Identity and authorisation", c:["BTP"],
+    d:"Who a user is, what they may see, and how the core finds out.",
+    f:["XSUAA scopes, role templates and role collections","Identity Authentication and Identity Provisioning","Corporate IdP federation and single sign-on","Principal propagation to the on-premise system","Destinations and the Cloud Connector","Authorisation checks that fail closed, and are tested"] },
+  { n:"Integration", c:["BTP","CAPM"],
+    d:"Between systems, where most projects actually break.",
+    f:["Integration Suite iFlows and mappings","API Management — policies, plans and consumers","Event Mesh, queues and asynchronous processing","Idempotency, retries and poison messages","File, SFTP and third-party API interfaces","Monitoring an interface after it goes live"] },
+  { n:"Multitenant SaaS", c:["BTP","CAPM","HANA"],
+    d:"Running an application for many customers on one deployment. We do this for our own product.",
+    f:["MTX / MTXS subscription and the SaaS registry","A HANA container per tenant, with tenant-scoped reads","Tenant onboarding, upgrade and offboarding","Schema upgrades across subscribed tenants","Per-tenant configuration without a per-tenant branch","Metering, limits and the cost model underneath"] }
+]},
+
+{ n:"CAPM — Cloud Application Programming", sub:[
+  { n:"Service modelling", c:["CAPM","CDS"],
+    d:"The domain first, and the service as a projection of it.",
+    f:["Domain models and reusable aspects in CDS","Service definitions, projections and drafts","Input validation and business rules in handlers","Localised texts and value help","Authorisation with @requires and @restrict","Test data, and tests that run without a cloud"] },
+  { n:"Custom logic and integration", c:["CAPM"],
+    d:"Node.js where the framework stops.",
+    f:["Before, on and after handlers, kept thin","Remote services to S/4HANA and third parties","Messaging and background jobs","File handling, attachments and object store","Scheduled work and long-running tasks","Structured logging and error contracts"] },
+  { n:"Build and deployment", c:["CAPM","HANA","BTP"],
+    d:"From a laptop to a productive subaccount, repeatably.",
+    f:["MTA build and deployment","HDI deployment and schema evolution","Approuter, HTML5 repository and app routing","Environment configuration through mtaext","Zero-surprise upgrades: what changes, and when it does not","A pipeline anyone on the team can run"] }
+]},
+
+{ n:"Delivery, Data and Support", sub:[
+  { n:"Data migration", c:["ABAP","CAPM","HANA"],
+    d:"Moving the old data across, with the evidence that it arrived intact.",
+    f:["Object catalogue in dependency order","Extraction and cleansing from the legacy system","Value mapping from legacy codes to platform values","Dry runs through the real service handlers, then rolled back","Reconciliation counts and a variance report","A permanent crosswalk from every legacy id","A reversible load, because the first one is never the last"] },
+  { n:"Support and managed services", c:["ABAP","FIORI","BTP","CAPM"],
+    d:"Keeping what is running, running — including what somebody else built.",
+    f:["Incident handling against an agreed response time","Small changes and enhancements out of a backlog","Upgrade and support-pack regression testing","Monitoring, alerting and the housekeeping nobody schedules","Taking over an undocumented system, and documenting it","Escalation to SAP with the trace attached"] },
+  { n:"Advisory and enablement", c:["ABAP","RAP","BTP","FIORI"],
+    d:"Answering a specific question, or teaching your team to answer it themselves.",
+    f:["Custom-code readiness and remediation planning","Extension strategy: in the core, or beside it","Architecture review of something already half-built","Hands-on training in RAP, CAP, CDS and Fiori","Coding standards, review practice and a definition of done","A written document at the end, either way"] }
+]}
+];
+
+(function () {
+  var grid = document.getElementById("svcGrid"),
+      search = document.getElementById("svcSearch"),
+      countOut = document.getElementById("svcCount"),
+      techRow = document.getElementById("techFilters"),
+      expandAll = document.getElementById("expandAll");
+  var tech = "ALL", query = "", open = {}, allOpen = false;
+
+  var mk = function (k, label, title) {
+    var b = document.createElement("button");
+    b.className = "filt"; b.type = "button"; b.textContent = label;
+    if (title) b.title = title;
+    b.setAttribute("aria-pressed", k === tech ? "true" : "false");
+    b.addEventListener("click", function () {
+      tech = k; open = {};
+      techRow.querySelectorAll(".filt").forEach(function (x) {
+        x.setAttribute("aria-pressed", x === b ? "true" : "false");
+      });
+      render();
+    });
+    techRow.appendChild(b);
+  };
+  mk("ALL", "Every technology", "Show every service");
+  TECH.forEach(function (t) { mk(t.k, t.n, t.d); });
+
+  search.addEventListener("input", function () {
+    query = search.value.toLowerCase().trim(); render();
+  });
+
+  expandAll.addEventListener("click", function () {
+    allOpen = !allOpen; open = {};
+    if (allOpen) SERVICES.forEach(function (m, i) { open[i] = true; });
+    expandAll.textContent = allOpen ? "Collapse all" : "Expand all";
+    render();
+  });
+
+  function subOk(s) {
+    if (tech !== "ALL" && s.c.indexOf(tech) === -1) return false;
+    if (!query) return true;
+    return (s.n + " " + s.d + " " + s.f.join(" ")).toLowerCase().indexOf(query) > -1;
+  }
+
+  function render() {
+    grid.innerHTML = "";
+    var shown = 0, hitNames = [];
+
+    SERVICES.forEach(function (m, i) {
+      var subs = m.sub.filter(subOk);
+      var titleHit = query && m.n.toLowerCase().indexOf(query) > -1;
+      if (titleHit && !subs.length) subs = m.sub.filter(function (s) {
+        return tech === "ALL" || s.c.indexOf(tech) > -1;
+      });
+      if (!subs.length) return;
+      shown++; hitNames.push(m.n);
+
+      var isOpen = !!open[i] || (query.length > 1);
+
+      var card = document.createElement("div");
+      card.className = "mcard" + (isOpen ? " open" : "");
+
+      var head = document.createElement("button");
+      head.className = "mcard-head"; head.type = "button";
+      head.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      head.innerHTML =
+        '<span class="m-idx" aria-hidden="true">◆</span>' +
+        '<span class="m-body"><span class="m-name"></span>' +
+        '<span class="m-meta"></span></span>' +
+        '<span class="m-chev" aria-hidden="true">›</span>';
+      head.querySelector(".m-name").textContent = m.n;
+      head.querySelector(".m-meta").textContent = subs.map(function (x) { return x.n; }).join("  ·  ");
+      head.addEventListener("click", function () { open[i] = !isOpen; render(); });
+      card.appendChild(head);
+
+      if (isOpen) {
+        var box = document.createElement("div");
+        box.className = "mcard-subs";
+        subs.forEach(function (s) {
+          var el = document.createElement("div");
+          el.className = "sub";
+          el.innerHTML =
+            '<div class="sub-head"><span class="sub-name"></span></div>' +
+            '<p class="sub-d"></p>' +
+            '<div class="svc-tags"></div>' +
+            '<ul class="fn-list"></ul>';
+          el.querySelector(".sub-name").textContent = s.n;
+          el.querySelector(".sub-d").textContent = s.d;
+
+          var tr = el.querySelector(".svc-tags");
+          s.c.forEach(function (k) {
+            var t = document.createElement("span");
+            t.className = "itag yes"; t.textContent = k;
+            var meta = TECH.filter(function (x) { return x.k === k; })[0];
+            if (meta) t.title = meta.d;
+            tr.appendChild(t);
+          });
+
+          var ul = el.querySelector(".fn-list");
+          s.f.forEach(function (fn) {
+            var li = document.createElement("li");
+            if (query && fn.toLowerCase().indexOf(query) > -1) li.className = "hit";
+            li.textContent = fn;
+            ul.appendChild(li);
+          });
+          box.appendChild(el);
+        });
+        card.appendChild(box);
+      }
+      grid.appendChild(card);
+    });
+
+    if (!shown) countOut.textContent = "";
+    else if (query) countOut.textContent = "Matches in " + hitNames.slice(0, 3).join(", ") +
+      (hitNames.length > 3 ? " and elsewhere" : "");
+    else if (tech !== "ALL") countOut.textContent = "Showing the " + tech + " work";
+    else countOut.textContent = "Every practice, every service";
+
+    if (!shown) {
+      var e = document.createElement("p");
+      e.style.cssText = "color:var(--muted);font-size:15px;padding:22px 0";
+      e.textContent = query
+        ? 'Nothing matches "' + search.value + '". Try a technology, a service or the work itself — or just ask us.'
+        : "No service is tagged with that technology.";
+      grid.appendChild(e);
+    }
+  }
+  render();
+})();
+
+/* ================= DIFFERENCE ================= */
+var DIFFS = [
+  ["We run a product of our own", "UniverseIT is multi-tenant on SAP BTP, with a HANA container per subscribing institution. Subscription, tenant upgrade, an XSUAA role collection that refuses to update while it is in use — we have met these on our own bill before meeting them on yours.", "UniverseIT · SAP BTP · MTXS"],
+  ["The estimate comes from the desk that writes the code", "There is no layer between the person who priced it and the person who has to make it work. When we are wrong about an estimate, we are wrong in front of you, early, rather than in a change request at the end.", "One team · named people"],
+  ["Both halves of the platform", "The ABAP core and the side-by-side platform are usually two different suppliers who blame each other. RAP, CDS and AMDP on one side; CAP, XSUAA, destinations and the Integration Suite on the other — and the same people across the join.", "On-stack · side-by-side"],
+  ["Design before code, written down", "Every non-trivial change starts as a short document: what is being built, what it touches, what it deliberately does not do. It survives the project, and it is what a new developer reads in year three.", "Written designs · handed over"],
+  ["Clean core, argued rather than assumed", "We will tell you when a modification is the cheap answer and the expensive decision, and we will put the alternative next to it. If you still want the shortcut, that is your call to make with the cost visible.", "Released APIs · ATC-clean"],
+  ["Small enough to answer", "You will not be handed to a different team after the sale, and you will not explain your landscape twice. The trade-off is honest: we take the work we can do properly, and we say so when a thing is not ours to take.", "One thread · same working day"]
+];
+
+(function () {
+  var g = document.getElementById("diffGrid");
+  DIFFS.forEach(function (d) {
+    var el = document.createElement("article");
+    el.className = "diff rv";
+    el.innerHTML = '<div class="rank"></div><div><h3></h3><p></p><div class="ev"></div></div>';
+    el.querySelector(".rank").textContent = "◆";
+    el.querySelector("h3").textContent = d[0];
+    el.querySelector("p").textContent = d[1];
+    el.querySelector(".ev").textContent = d[2];
+    g.appendChild(el);
+  });
+})();
+
+/* ================= NAV — MARK THE SECTION YOU ARE IN ================= */
+(function () {
+  var links = [].slice.call(document.querySelectorAll(".nav-links a[href^='#']"));
+  var pairs = links
+    .map(function (a) { return { a: a, el: document.getElementById(a.getAttribute("href").slice(1)) }; })
+    .filter(function (p) { return p.el; })
+    .sort(function (x, y) {
+      return (x.el.compareDocumentPosition(y.el) & Node.DOCUMENT_POSITION_FOLLOWING) ? -1 : 1;
+    });
+  if (!pairs.length) return;
+  var nav = document.querySelector(".nav"), current = null, ticking = false;
+
+  function mark() {
+    ticking = false;
+    var line = (nav ? nav.offsetHeight : 0) + 24, best = null;
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i].el.getBoundingClientRect().top <= line) best = pairs[i];
+    }
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      best = pairs[pairs.length - 1];
+    }
+    if (best === current) return;
+    if (current) current.a.classList.remove("on");
+    current = best;
+    if (current) current.a.classList.add("on");
+  }
+
+  addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(mark); }
+  }, { passive: true });
+  addEventListener("resize", mark);
+  mark();
+})();
+
+/* ================= ENQUIRY ================= */
+/* ── WIRING POINT ──────────────────────────────────────────────────────────
+   Set ENQUIRY_ENDPOINT to a service and the form POSTs the enquiry as JSON.
+   Leave it null and nothing leaves the page: the enquiry is shown back,
+   copyable, with a mail link as the fallback. CONTACT_EMAIL is the address
+   that receives them, and it is the only place the address is written.     */
+var ENQUIRY_ENDPOINT = null;
+var ENQUIRY_KEY = "";
+var CONTACT_EMAIL = "contact@saptechs.co.in";
+/* ────────────────────────────────────────────────────────────────────────── */
+
+var WANTS = [
+  "ABAP development", "RAP and clean core", "CDS modelling", "Fiori and UI5",
+  "SAP BTP", "CAPM on BTP", "HANA and AMDP", "Data migration", "Support and AMS",
+  "UniverseIT", "ProficIT", "DynAppro", "BuilDyn", "KirikIT"
+];
+
+(function () {
+  var form = document.getElementById("demoForm");
+  if (!form) return;
+  var sentTitle = document.getElementById("sentTitle");
+  var panel = document.getElementById("demoPanel"),
+      reveal = document.getElementById("demoReveal");
+
+  function openDemo(scroll) {
+    var wasShut = panel.hidden;
+    panel.hidden = false;
+    reveal.hidden = true;
+    if (scroll) {
+      document.getElementById("enquire").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    if (wasShut) {
+      setTimeout(function () { document.getElementById("d-name").focus({ preventScroll: true }); }, scroll ? 520 : 0);
+    }
+  }
+  document.querySelectorAll("[data-open-demo]").forEach(function (el) {
+    el.addEventListener("click", function () { openDemo(el !== reveal); });
+  });
+  if (location.hash === "#enquire") openDemo(false);
+  window.addEventListener("hashchange", function () { if (location.hash === "#enquire") openDemo(false); });
+
+  var wantRow = document.getElementById("demoWant"),
+      sent = document.getElementById("demoSent"),
+      sentLead = document.getElementById("sentLead"),
+      sentBody = document.getElementById("sentBody"),
+      note = document.getElementById("demoNote"),
+      chosen = [];
+
+  WANTS.forEach(function (w) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = w; b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function () {
+      var i = chosen.indexOf(w);
+      if (i > -1) chosen.splice(i, 1); else chosen.push(w);
+      b.setAttribute("aria-pressed", i > -1 ? "false" : "true");
+    });
+    wantRow.appendChild(b);
+  });
+
+  if (CONTACT_EMAIL) {
+    var slot = document.getElementById("coEmail");
+    if (slot) { slot.href = "mailto:" + CONTACT_EMAIL; slot.textContent = CONTACT_EMAIL; }
+    note.innerHTML = "Your enquiry opens in your mail app, addressed to " +
+      '<span class="mail-inline"></span>. Nothing is transmitted from this page itself.';
+    note.querySelector(".mail-inline").textContent = CONTACT_EMAIL;
+  }
+  if (ENQUIRY_ENDPOINT) note.textContent = "We reply to every enquiry, usually the same working day.";
+
+  function val(id) { return (document.getElementById(id).value || "").trim(); }
+  function flag(wrap, bad) { document.getElementById(wrap).classList.toggle("bad", bad); }
+
+  function compose(d) {
+    return [
+      "Enquiry — SAPTECHS", "",
+      "Name         : " + d.name,
+      "Organisation : " + d.institution,
+      "About        : " + d.kind,
+      "Role         : " + d.role,
+      "Email        : " + d.email,
+      "Mobile       : " + (d.phone || "—"),
+      "Interested in: " + (d.wants.length ? d.wants.join(", ") : "not specified"),
+      "", "The problem, in their own words:",
+      d.message || "(not given)"
+    ].join("\n");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var d = {
+      name: val("d-name"), institution: val("d-inst"), kind: val("d-type"),
+      role: val("d-role"), email: val("d-email"), phone: val("d-phone"),
+      message: val("d-msg"), wants: chosen.slice()
+    };
+    var badName = !d.name, badInst = !d.institution,
+        badMail = !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email);
+    flag("f-name", badName); flag("f-inst", badInst); flag("f-email", badMail);
+    if (badName || badInst || badMail) {
+      var firstBad = form.querySelector(".field.bad input");
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var honeypot = val("d-company");
+    if (honeypot && !ENQUIRY_ENDPOINT) return;
+
+    var text = compose(d);
+    var first = d.name.split(" ")[0];
+    var subject = "Enquiry — " + d.institution;
+    var mail = document.getElementById("demoMail");
+    mail.href = "mailto:" + (CONTACT_EMAIL || "") + "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(text);
+
+    function done(state) {
+      sentTitle.textContent = state === "sent" ? "Your enquiry is with us"
+                            : state === "failed" ? "That did not send"
+                            : "That is everything we need";
+      sent.classList.toggle("warn", state === "failed");
+      sentLead.textContent =
+        state === "sent"   ? "Thank you, " + first + ". It has reached " + (CONTACT_EMAIL || "us") +
+                             " and we will be in touch. A copy is below for your own records."
+      : state === "failed" ? "Something went wrong on the way, " + first +
+                             ". Nothing is lost — send it yourself with either button below and it reaches us just the same."
+      :                      "Thank you, " + first + ". Nothing has left this page on its own — open it in your mail app, " +
+                             "or copy it across to " + (CONTACT_EMAIL || "us") + ", and it reaches us.";
+      sentBody.textContent = text;
+      form.hidden = true; sent.hidden = false;
+      sent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    if (!ENQUIRY_ENDPOINT) { done("local"); return; }
+
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn.textContent;
+    btn.disabled = true; btn.textContent = "Sending…";
+
+    var payload = {
+      name: d.name, institution: d.institution, email: d.email, phone: d.phone,
+      kind: d.kind, role: d.role, wants: d.wants.join(", "), message: d.message,
+      company: honeypot
+    };
+    if (ENQUIRY_KEY) payload.access_key = ENQUIRY_KEY;
+
+    fetch(ENQUIRY_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      btn.disabled = false; btn.textContent = label;
+      done(r.ok ? "sent" : "failed");
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = label;
+      done("failed");
+    });
+  });
+
+  document.getElementById("demoCopy").addEventListener("click", function (b) {
+    var btn = b.currentTarget;
+    var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy this enquiry"; }, 1600); };
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(sentBody);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(sentBody.textContent).then(done, fallback);
+    } else { fallback(); }
+  });
+
+  document.getElementById("demoAgain").addEventListener("click", function () {
+    form.reset(); chosen = [];
+    wantRow.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+    ["f-name", "f-inst", "f-email"].forEach(function (id) { flag(id, false); });
+    sent.hidden = true; form.hidden = false;
+    document.getElementById("d-name").focus();
+  });
+})();
+
+/* ================= SCROLL REVEAL ================= */
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var els = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)) {
+    els.forEach(function (e) { e.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: .08 });
+    els.forEach(function (e, i) { e.style.transitionDelay = Math.min(i % 6, 4) * 55 + "ms"; io.observe(e); });
+  }
+})();
+</script>
+</body>
+</html>
